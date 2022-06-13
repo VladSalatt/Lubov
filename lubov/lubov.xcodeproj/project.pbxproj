@@ -19,6 +19,7 @@
 		EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F4002845444100179D6E /* SceneDelegate.swift */; };
 		EA99F4082845444200179D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA99F4072845444200179D6E /* Assets.xcassets */; };
 		EA99F40B2845444200179D6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA99F4092845444200179D6E /* LaunchScreen.storyboard */; };
+		EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EA99F4072845444200179D6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA99F40A2845444200179D6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA99F40C2845444300179D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		EA99F3FD2845444100179D6E /* lubov */ = {
 			isa = PBXGroup;
 			children = (
+				EAC6FCB72857CD9300677A85 /* Extensions */,
 				C52E4BC428468B6A00DE44E3 /* Modules */,
 				EA99F3FE2845444100179D6E /* AppDelegate.swift */,
 				EA99F4002845444100179D6E /* SceneDelegate.swift */,
@@ -139,6 +142,14 @@
 				EA99F40C2845444300179D6E /* Info.plist */,
 			);
 			path = lubov;
+			sourceTree = "<group>";
+		};
+		EAC6FCB72857CD9300677A85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
+				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
 				C52E4BD12846903800DE44E3 /* TasksViewOutput.swift in Sources */,
 				C52E4BCF28468FCB00DE44E3 /* TasksPresenter.swift in Sources */,
 				C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */,
