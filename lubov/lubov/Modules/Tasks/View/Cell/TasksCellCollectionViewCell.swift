@@ -12,8 +12,9 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     private enum Constants {
-        static let horizontalInset: CGFloat = 5
+        static let horizontalInset: CGFloat = 10
         static let verticalInset: CGFloat = 10
+        static let insetOfCellFromSuperview: CGFloat = 24
     }
     
     /// Проперти по которому потом будем определять номер задания
@@ -29,6 +30,16 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        return label
+    }()
+    
+    private lazy var titleTaskLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.font = .boldSystemFont(ofSize: 20)
+        label.text = "Test Task"
         label.textColor = .white
         return label
     }()
@@ -59,6 +70,14 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         self.numberOfTask = model.numberOfTask + 1
         numberOfTaskLabel.text = (model.numberOfTask + 1).stringValue
     }
+    
+    // Эта херня отвечает за динамическую высоту ячейки и распределению ее по всей длине экрана
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        let width = UIScreen.main.bounds.size.width - Constants.insetOfCellFromSuperview * 2
+        layoutAttributes.bounds.size.width = width
+        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        return layoutAttributes
+    }
 }
 
 extension TasksCellCollectionViewCell {
@@ -75,20 +94,29 @@ private extension TasksCellCollectionViewCell {
         
         addSubview(contentView)
         contentView.addSubview(numberOfTaskLabel)
+        contentView.addSubview(titleTaskLabel)
         
     }
     
     func makeConstraints() {
         NSLayoutConstraint.activate([
             // contentView
-            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.horizontalInset),
-            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constants.horizontalInset),
-            contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.verticalInset),
-            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Constants.verticalInset),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.horizontalInset),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.horizontalInset),
+            contentView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.verticalInset),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.verticalInset),
             
             // numberOfTaskLabel
-            numberOfTaskLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            numberOfTaskLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            numberOfTaskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            numberOfTaskLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            numberOfTaskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            // titleTaskLabel
+            titleTaskLabel.leadingAnchor.constraint(equalTo: numberOfTaskLabel.trailingAnchor, constant: 10),
+            titleTaskLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            titleTaskLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            titleTaskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
+        numberOfTaskLabel.setContentHuggingPriority(.required, for: .horizontal)
     }
 }

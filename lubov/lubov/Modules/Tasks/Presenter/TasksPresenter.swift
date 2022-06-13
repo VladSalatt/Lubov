@@ -31,6 +31,7 @@ final class TasksPresenter: NSObject, TasksViewOutput {
 }
 
 // MARK: UICollectionViewDataSource
+
 extension TasksPresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3 // Заменить на динамик
@@ -42,8 +43,6 @@ extension TasksPresenter: UICollectionViewDataSource {
             for: indexPath
         ) as? TasksCellCollectionViewCell else { return UICollectionViewCell() }
     
-        print(indexPath)
-        
         // С тегами не получилось, поэтому для порядкового номера будем брать indexPath.row
         cell.configure(
             TasksCellCollectionViewCell.Model(
@@ -55,6 +54,7 @@ extension TasksPresenter: UICollectionViewDataSource {
 }
 
 // MARK: UICollectionViewDelegate
+
 extension TasksPresenter: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Обработать нажатие на ячейку

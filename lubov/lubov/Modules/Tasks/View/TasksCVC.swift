@@ -7,17 +7,17 @@
 
 import UIKit
 
-// TODO: 1) Написать свой FlowLayout
-// TODO: 2) Настроить динамическу высоту ячеек
 // TODO: 3) Занести цветовую палитру
 final class TasksCVC: UICollectionViewController {
     private enum Constants {
         static let collectionViewInsets: UIEdgeInsets = .init(
             top: 0,
-            left: 24,
+            left: horizontalInset,
             bottom: 0,
-            right: 24
+            right: horizontalInset
         )
+        static let horizontalInset: CGFloat = 24
+        static let minimumLineSpacing: CGFloat = 20
     }
 
     // MARK: - Properties
@@ -28,12 +28,23 @@ final class TasksCVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionFlowLayout()
         setupCollectionView()
         setupUI()
     }
 }
 
 private extension TasksCVC {
+    func setupCollectionFlowLayout() {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.sectionInset = Constants.collectionViewInsets
+        layout.minimumLineSpacing = Constants.minimumLineSpacing
+        self.collectionView.collectionViewLayout = layout
+    }
+    
     func setupCollectionView() {
         self.collectionView.register(
             TasksCellCollectionViewCell.self,
@@ -45,7 +56,6 @@ private extension TasksCVC {
     
     func setupUI() {
         title = "Tasks" // Переименовать
-        self.collectionView.contentInset = Constants.collectionViewInsets
         self.collectionView.backgroundColor = .white // изменить
     }
 }
