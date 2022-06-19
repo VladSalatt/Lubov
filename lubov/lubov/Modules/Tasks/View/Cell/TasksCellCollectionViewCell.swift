@@ -30,7 +30,6 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .white
         return label
     }()
     
@@ -39,7 +38,6 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .boldSystemFont(ofSize: 20)
-        label.text = "Test Task"
         label.textColor = .white
         return label
     }()
@@ -89,7 +87,7 @@ extension TasksCellCollectionViewCell {
 
 private extension TasksCellCollectionViewCell {
     func setupUI() {
-        backgroundColor = .red // Изменить
+        backgroundColor = .sandColor
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(contentView)

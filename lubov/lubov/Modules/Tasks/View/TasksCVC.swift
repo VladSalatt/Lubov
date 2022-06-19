@@ -55,8 +55,7 @@ private extension TasksCVC {
     }
     
     func setupUI() {
-        title = "Tasks" // Переименовать
-        self.collectionView.backgroundColor = .white // изменить
+        self.collectionView.backgroundColor = .darkBlueColor
     }
 }
 
