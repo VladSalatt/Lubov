@@ -10,19 +10,14 @@ import UIKit
 final class TasksCellCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
+
+    static let reuseId = "tasksCellId"
     
     private enum Constants {
         static let horizontalInset: CGFloat = 10
         static let verticalInset: CGFloat = 10
         static let insetOfCellFromSuperview: CGFloat = 24
     }
-    
-    /// Проперти по которому потом будем определять номер задания
-    /// `private(set)` - это доступ, при котором
-    /// мы можем получить значение откуда угодно `get`
-    /// но засетить мы сможем его только в этом файле `set`
-    private(set) var numberOfTask: Int?
-    static let reuseId = "tasksCellId"
 
     // MARK: - Views
     
@@ -30,6 +25,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .darkBlueColor
         return label
     }()
     
@@ -38,7 +34,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .white
+        label.textColor = .darkBlueColor
         return label
     }()
     
@@ -64,9 +60,9 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     
     /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
     /// Иными словами во вне мы будем вызывать только его
-    func configure(_ model: Model) {
-        self.numberOfTask = model.numberOfTask + 1
-        numberOfTaskLabel.text = (model.numberOfTask + 1).stringValue
+    func configure(with model: Model) {
+        numberOfTaskLabel.text = model.numberOfTask.stringValue
+        titleTaskLabel.text = model.descriptionOfTask
     }
     
     // Эта херня отвечает за динамическую высоту ячейки и распределению ее по всей длине экрана
@@ -82,6 +78,7 @@ extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
     struct Model {
         let numberOfTask: Int
+        let descriptionOfTask: String
     }
 }
 

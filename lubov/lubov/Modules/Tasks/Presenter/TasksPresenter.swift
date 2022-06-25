@@ -13,12 +13,14 @@ final class TasksPresenter: NSObject, TasksViewOutput {
 
     private weak var view: TasksViewInput?
     private let router: TasksRouterProtocol
+    private var tasks: [Task]
     
     // MARK: - Initializers
 
     init(view: TasksViewInput, router: TasksRouterProtocol) {
         self.view = view
         self.router = router
+        self.tasks = Task.allTasks
     }
     
     // MARK: - Methods
@@ -27,14 +29,13 @@ final class TasksPresenter: NSObject, TasksViewOutput {
     func moveToTasks() {
         router.moveToTasks()
     }
-    
 }
 
 // MARK: UICollectionViewDataSource
 
 extension TasksPresenter: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3 // Заменить на динамик
+        return tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,13 +43,8 @@ extension TasksPresenter: UICollectionViewDataSource {
             withReuseIdentifier: TasksCellCollectionViewCell.reuseId,
             for: indexPath
         ) as? TasksCellCollectionViewCell else { return UICollectionViewCell() }
-    
-        // С тегами не получилось, поэтому для порядкового номера будем брать indexPath.row
-        cell.configure(
-            TasksCellCollectionViewCell.Model(
-                numberOfTask: indexPath.row
-            )
-        )
+        let task = tasks[indexPath.row]
+        cell.configure(with: .init(task))
         return cell
     }
 }
@@ -59,5 +55,12 @@ extension TasksPresenter: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Обработать нажатие на ячейку
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+private extension TasksCellCollectionViewCell.Model {
+    init(_ model: Task) {
+        numberOfTask = model.numberOfTask
+        descriptionOfTask = model.descriptionTask
     }
 }
