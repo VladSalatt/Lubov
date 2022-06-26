@@ -23,7 +23,7 @@ final class TasksPresenter: NSObject, TasksViewOutput {
         self.tasks = [
             Task(
                 numberOfTask: 1,
-                descriptionTask: "First Task"
+                descriptionTask: "Узнаешь его по квадратности :-D"
             ),
             Task(
                 numberOfTask: 2,

@@ -26,15 +26,17 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .darkBlueColor
+        label.isHidden = true
         return label
     }()
     
     private lazy var titleTaskLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .darkBlueColor
+        label.numberOfLines = 0
         return label
     }()
     
@@ -69,7 +71,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let width = UIScreen.main.bounds.size.width - Constants.insetOfCellFromSuperview * 2
         layoutAttributes.bounds.size.width = width
-        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 50
         return layoutAttributes
     }
 }

@@ -23,13 +23,25 @@ final class TasksRouter: TasksRouterProtocol {
 
     func moveToTask(at screen: Screens) {
         guard let view = view, let navigationController = view.navigationController else { return }
+        var viewController: UIViewController
         /// РазвилОЧКА
         print(screen)
-//        switch screen {
-//        case .knownBySquare:
-//            <#code#>
-//        case .second:
-//            <#code#>
-//        }
+        switch screen {
+        case .knownBySquare:
+            viewController = UIViewController()
+            viewController.title = ":-D"
+        case .second:
+            viewController = UIViewController()
+        case .third:
+            viewController = UIViewController()
+        case .fourth:
+            viewController = UIViewController()
+        case .fifth:
+            viewController = UIViewController()
+        case .sixth:
+            viewController = UIViewController()
+        }
+        viewController.view.backgroundColor = .darkBlueColor
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
