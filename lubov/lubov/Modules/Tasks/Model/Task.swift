@@ -7,37 +7,14 @@
 
 import Foundation
 
-struct Task {
+protocol TaskProtocol {
+    var numberOfTask: Int { get set }
+    var descriptionTask: String { get set }
+}
+
+struct Task: TaskProtocol {
     /// Номер задание
     var numberOfTask: Int
     /// Описние задания
     var descriptionTask: String
-    
-    /// Все модели заданий
-    static let allTasks: [Task] = [
-        .init(
-            numberOfTask: 1,
-            descriptionTask: "First Task"
-        ),
-        .init(
-            numberOfTask: 2,
-            descriptionTask: "Second Task"
-        ),
-        .init(
-            numberOfTask: 3,
-            descriptionTask: "Third Task"
-        ),
-        .init(
-            numberOfTask: 4,
-            descriptionTask: "Fourth Task"
-        ),
-        .init(
-            numberOfTask: 5,
-            descriptionTask: "Fifth Task"
-        ),
-        .init(
-            numberOfTask: 6,
-            descriptionTask: "Sixth Task"
-        ),
-    ]
 }

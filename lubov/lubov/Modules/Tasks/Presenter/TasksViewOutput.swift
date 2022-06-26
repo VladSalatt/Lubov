@@ -7,5 +7,5 @@
 
 protocol TasksViewOutput: AnyObject {
     init(view: TasksViewInput, router: TasksRouterProtocol)
-    func moveToTasks() // call same func in router
+    func moveToTask(at: Screens) // call same func in router
 }

@@ -21,10 +21,15 @@ final class TasksRouter: TasksRouterProtocol {
     
     // MARK: - Methods
 
-    func moveToTasks() {
+    func moveToTask(at screen: Screens) {
         guard let view = view, let navigationController = view.navigationController else { return }
-        print("moveToTasks")
-//        let viewController =
-//        navigationController.pushViewController(viewController, animated: true)
+        /// РазвилОЧКА
+        print(screen)
+//        switch screen {
+//        case .knownBySquare:
+//            <#code#>
+//        case .second:
+//            <#code#>
+//        }
     }
 }

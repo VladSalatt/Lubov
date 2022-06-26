@@ -13,21 +13,46 @@ final class TasksPresenter: NSObject, TasksViewOutput {
 
     private weak var view: TasksViewInput?
     private let router: TasksRouterProtocol
-    private var tasks: [Task]
+    private var tasks: [TaskProtocol]
     
     // MARK: - Initializers
 
     init(view: TasksViewInput, router: TasksRouterProtocol) {
         self.view = view
         self.router = router
-        self.tasks = Task.allTasks
+        self.tasks = [
+            Task(
+                numberOfTask: 1,
+                descriptionTask: "First Task"
+            ),
+            Task(
+                numberOfTask: 2,
+                descriptionTask: "Second Task"
+            ),
+            Task(
+                numberOfTask: 3,
+                descriptionTask: "Third Task"
+            ),
+            Task(
+                numberOfTask: 4,
+                descriptionTask: "Fourth Task"
+            ),
+            Task(
+                numberOfTask: 5,
+                descriptionTask: "Fifth Task"
+            ),
+            Task(
+                numberOfTask: 6,
+                descriptionTask: "Sixth Task"
+            )
+        ]
     }
     
     // MARK: - Methods
 
     // Moves
-    func moveToTasks() {
-        router.moveToTasks()
+    func moveToTask(at screen: Screens) {
+        router.moveToTask(at: screen)
     }
 }
 
@@ -53,13 +78,14 @@ extension TasksPresenter: UICollectionViewDataSource {
 
 extension TasksPresenter: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Обработать нажатие на ячейку
+        let nextScreen = Screens.allCases[indexPath.row]
+        moveToTask(at: nextScreen)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
 private extension TasksCellCollectionViewCell.Model {
-    init(_ model: Task) {
+    init(_ model: TaskProtocol) {
         numberOfTask = model.numberOfTask
         descriptionOfTask = model.descriptionTask
     }
