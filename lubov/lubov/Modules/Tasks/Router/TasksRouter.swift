@@ -28,8 +28,7 @@ final class TasksRouter: TasksRouterProtocol {
         print(screen)
         switch screen {
         case .knownBySquare:
-            viewController = UIViewController()
-            viewController.title = ":-D"
+            viewController = KnownBySquareConfigurator.configure()
         case .second:
             viewController = UIViewController()
         case .third:
@@ -41,7 +40,6 @@ final class TasksRouter: TasksRouterProtocol {
         case .sixth:
             viewController = UIViewController()
         }
-        viewController.view.backgroundColor = .darkBlueColor
         navigationController.pushViewController(viewController, animated: true)
     }
 }
