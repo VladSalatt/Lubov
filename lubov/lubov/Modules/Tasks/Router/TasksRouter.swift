@@ -24,8 +24,6 @@ final class TasksRouter: TasksRouterProtocol {
     func moveToTask(at screen: Screens) {
         guard let view = view, let navigationController = view.navigationController else { return }
         var viewController: UIViewController
-        /// РазвилОЧКА
-        print(screen)
         switch screen {
         case .knownBySquare:
             viewController = KnownBySquareConfigurator.configure()

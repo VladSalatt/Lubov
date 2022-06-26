@@ -21,30 +21,12 @@ final class TasksPresenter: NSObject, TasksViewOutput {
         self.view = view
         self.router = router
         self.tasks = [
-            Task(
-                numberOfTask: 1,
-                descriptionTask: "Узнаешь его по квадратности :-D"
-            ),
-            Task(
-                numberOfTask: 2,
-                descriptionTask: "Second Task"
-            ),
-            Task(
-                numberOfTask: 3,
-                descriptionTask: "Third Task"
-            ),
-            Task(
-                numberOfTask: 4,
-                descriptionTask: "Fourth Task"
-            ),
-            Task(
-                numberOfTask: 5,
-                descriptionTask: "Fifth Task"
-            ),
-            Task(
-                numberOfTask: 6,
-                descriptionTask: "Sixth Task"
-            )
+            Task(descriptionTask: "Узнаешь его по квадратности :-D"),
+            Task(descriptionTask: "Second Task"),
+            Task(descriptionTask: "Third Task"),
+            Task(descriptionTask: "Fourth Task"),
+            Task(descriptionTask: "Fifth Task"),
+            Task(descriptionTask: "Sixth Task")
         ]
     }
     
@@ -86,7 +68,6 @@ extension TasksPresenter: UICollectionViewDelegate {
 
 private extension TasksCellCollectionViewCell.Model {
     init(_ model: TaskProtocol) {
-        numberOfTask = model.numberOfTask
         descriptionOfTask = model.descriptionTask
     }
 }
