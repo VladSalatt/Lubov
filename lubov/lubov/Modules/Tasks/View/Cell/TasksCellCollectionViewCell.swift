@@ -21,20 +21,13 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Views
     
-    private lazy var numberOfTaskLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .darkBlueColor
-        return label
-    }()
-    
     private lazy var titleTaskLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .darkBlueColor
+        label.numberOfLines = 0
         return label
     }()
     
@@ -61,7 +54,6 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
     /// Иными словами во вне мы будем вызывать только его
     func configure(with model: Model) {
-        numberOfTaskLabel.text = model.numberOfTask.stringValue
         titleTaskLabel.text = model.descriptionOfTask
     }
     
@@ -69,7 +61,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let width = UIScreen.main.bounds.size.width - Constants.insetOfCellFromSuperview * 2
         layoutAttributes.bounds.size.width = width
-        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 50
         return layoutAttributes
     }
 }
@@ -77,7 +69,6 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
 extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
     struct Model {
-        let numberOfTask: Int
         let descriptionOfTask: String
     }
 }
@@ -88,9 +79,7 @@ private extension TasksCellCollectionViewCell {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(contentView)
-        contentView.addSubview(numberOfTaskLabel)
         contentView.addSubview(titleTaskLabel)
-        
     }
     
     func makeConstraints() {
@@ -101,17 +90,11 @@ private extension TasksCellCollectionViewCell {
             contentView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.verticalInset),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.verticalInset),
             
-            // numberOfTaskLabel
-            numberOfTaskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            numberOfTaskLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            numberOfTaskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            
             // titleTaskLabel
-            titleTaskLabel.leadingAnchor.constraint(equalTo: numberOfTaskLabel.trailingAnchor, constant: 10),
+            titleTaskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titleTaskLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             titleTaskLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleTaskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
-        numberOfTaskLabel.setContentHuggingPriority(.required, for: .horizontal)
     }
 }

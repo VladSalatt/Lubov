@@ -8,13 +8,10 @@
 import Foundation
 
 protocol TaskProtocol {
-    var numberOfTask: Int { get set }
     var descriptionTask: String { get set }
 }
 
 struct Task: TaskProtocol {
-    /// Номер задание
-    var numberOfTask: Int
     /// Описние задания
     var descriptionTask: String
 }

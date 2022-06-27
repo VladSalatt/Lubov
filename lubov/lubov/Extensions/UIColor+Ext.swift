@@ -13,6 +13,7 @@ extension UIColor {
     static let sandColor = UIColor(hex: 0xECE5C7)
     static let landColor = UIColor(hex: 0xCDC2AE)
     static let darkBlueColor = UIColor(hex: 0x354259)
+    static let successTaskColor = UIColor(hex: 0x7AE7A0)
     
     convenience init(hex: Int, alpha: CGFloat = 1) {
         let red = (hex >> 16) & 0xFF

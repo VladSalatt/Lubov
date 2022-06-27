@@ -23,13 +23,21 @@ final class TasksRouter: TasksRouterProtocol {
 
     func moveToTask(at screen: Screens) {
         guard let view = view, let navigationController = view.navigationController else { return }
-        /// РазвилОЧКА
-        print(screen)
-//        switch screen {
-//        case .knownBySquare:
-//            <#code#>
-//        case .second:
-//            <#code#>
-//        }
+        var viewController: UIViewController
+        switch screen {
+        case .knownBySquare:
+            viewController = KnownBySquareConfigurator.configure()
+        case .second:
+            viewController = UIViewController()
+        case .third:
+            viewController = UIViewController()
+        case .fourth:
+            viewController = UIViewController()
+        case .fifth:
+            viewController = UIViewController()
+        case .sixth:
+            viewController = UIViewController()
+        }
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
