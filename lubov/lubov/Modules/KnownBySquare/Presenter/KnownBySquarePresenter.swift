@@ -58,17 +58,18 @@ extension KnownBySquarePresenter {
         
         if acceleration.x >= splitAngle {
             orientationNew = .landscapeLeft
-        }
-        else if acceleration.x <= -(splitAngle) {
+        } else if acceleration.x <= -(splitAngle) {
             orientationNew = .landscapeRight
-        }
-        else if acceleration.y <= -(splitAngle) {
+        } else if acceleration.y <= -(splitAngle) {
             orientationNew = .portrait
-        }
-        else if acceleration.y >= splitAngle {
+        } else if acceleration.y >= splitAngle {
             orientationNew = .portraitUpsideDown
         } else {
             orientationNew = UIInterfaceOrientation(rawValue: 0)!
+        }
+        
+        if orientationLast.rawValue == 2 && orientationNew.rawValue == 1 {
+            print("Square drop in toilet")
         }
         
         if orientationNew != orientationLast && orientationNew != .unknown {
