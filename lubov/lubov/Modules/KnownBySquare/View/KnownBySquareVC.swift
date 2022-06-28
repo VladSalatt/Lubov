@@ -13,8 +13,8 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     // MARK: - Constants
     
     private enum Constants {
-        static let topInset: CGFloat = 24
         static let bottomInset: CGFloat = 50
+        static let topInset: CGFloat = bottomInset
     }
     
     // MARK: - properties
@@ -25,6 +25,8 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "toilet")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
+        
         return imageView
     }()
     
@@ -40,9 +42,12 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
         super.viewDidLoad()
         
         setupUI()
+        addGesture()
     }
     
 }
+
+// MARK: - SetupUI
 
 private extension KnownBySquareVC {
     
@@ -55,12 +60,36 @@ private extension KnownBySquareVC {
     func makeConstraints() {
         // ToiletImage
         view.addSubview(toiletImageView)
+        let toiletHeight = view.frame.height / 2 - (2 * Constants.bottomInset)
         NSLayoutConstraint.activate([
             toiletImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.bottomInset),
-            toiletImageView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: Constants.topInset),
+            toiletImageView.heightAnchor.constraint(equalToConstant: toiletHeight),
             toiletImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
+    }
+    
+}
+
+// MARK: - TapGesture
+
+private extension KnownBySquareVC {
+    
+    func addGesture() {
+        let tap = UITapGestureRecognizer()
+        
+        toiletImageView.addGestureRecognizer(tap)
+        tap.addTarget(self, action: #selector(updateImage(touch:)))
+    }
+    
+    @objc func updateImage(touch: UITapGestureRecognizer) {
+        let touchPoint = touch.location(in: toiletImageView)
+        let topEdge = toiletImageView.frame.height / 2 - 10
+        let rightEdge = toiletImageView.frame.width / 3
+        guard touchPoint.y >= topEdge || touchPoint.x <= rightEdge else { return }
+
+        // UpdateImage
+        print(touchPoint.x, touchPoint.y)
     }
     
 }
