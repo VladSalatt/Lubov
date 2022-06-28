@@ -9,4 +9,5 @@ import Foundation
 
 protocol KnownBySquareViewOutput: AnyObject {
     init(view: KnownBySquareViewInput, router: KnownBySquareRouterProtocol)
+    func addCoreMotion()
 }
