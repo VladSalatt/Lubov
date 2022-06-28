@@ -21,11 +21,20 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     
     var presenter: KnownBySquareViewOutput?
     
+    private var isToiletOpen: Bool = false
+    
     private let toiletImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "toilet")
+        imageView.image = UIImage(named: "toilet-closed")
+        imageView.animationDuration = 0.7
+        imageView.animationRepeatCount = 1
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
+        imageView.animationImages = [
+            UIImage(named: "toilet-opened")!,
+            UIImage(named: "toilet-half-opened")!,
+            UIImage(named: "toilet-closed")!
+        ]
         
         return imageView
     }()
@@ -73,6 +82,7 @@ private extension KnownBySquareVC {
 
 // MARK: - TapGesture
 
+// For Toilet
 private extension KnownBySquareVC {
     
     func addGesture() {
@@ -87,9 +97,29 @@ private extension KnownBySquareVC {
         let topEdge = toiletImageView.frame.height / 2 - 10
         let rightEdge = toiletImageView.frame.width / 3
         guard touchPoint.y >= topEdge || touchPoint.x <= rightEdge else { return }
-
+        
         // UpdateImage
-        print(touchPoint.x, touchPoint.y)
+        updateStateOfToilet()
     }
     
 }
+
+// For square
+private extension KnownBySquareVC { }
+
+// MARK: - Animations
+
+private extension KnownBySquareVC {
+    
+    func updateStateOfToilet() {
+        toiletImageView.animationImages?.swapAt(0, 2)
+        toiletImageView.startAnimating()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.toiletImageView.image = self.toiletImageView.animationImages?.last!
+        }
+        isToiletOpen = !isToiletOpen
+    }
+    
+}
+
