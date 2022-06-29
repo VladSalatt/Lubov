@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class TasksPresenter: NSObject, TasksViewOutput {
     
@@ -13,21 +14,21 @@ final class TasksPresenter: NSObject, TasksViewOutput {
 
     private weak var view: TasksViewInput?
     private let router: TasksRouterProtocol
-    private var tasks: [TaskProtocol]
+    private var userDefaults: UserDefaultsStorage
+    private var tasks = [Task]()
     
     // MARK: - Initializers
 
-    init(view: TasksViewInput, router: TasksRouterProtocol) {
+    init(
+        view: TasksViewInput,
+        router: TasksRouterProtocol,
+        userDefaults: UserDefaultsStorage
+    ) {
         self.view = view
         self.router = router
-        self.tasks = [
-            Task(descriptionTask: "Узнаешь его по квадратности :-D"),
-            Task(descriptionTask: "Second Task"),
-            Task(descriptionTask: "Third Task"),
-            Task(descriptionTask: "Fourth Task"),
-            Task(descriptionTask: "Fifth Task"),
-            Task(descriptionTask: "Sixth Task")
-        ]
+        self.userDefaults = userDefaults
+        super.init()
+        configureTasks()
     }
     
     // MARK: - Methods
@@ -35,6 +36,16 @@ final class TasksPresenter: NSObject, TasksViewOutput {
     // Moves
     func moveToTask(at screen: Screens) {
         router.moveToTask(at: screen)
+    }
+    
+    func configureTasks() {
+        guard !userDefaults.isSecondOpen else {
+            self.tasks = fetchTasks()
+            return
+        }
+        userDefaults.isSecondOpen = true
+        
+        self.tasks = makeTasks()
     }
 }
 
@@ -51,6 +62,7 @@ extension TasksPresenter: UICollectionViewDataSource {
             for: indexPath
         ) as? TasksCellCollectionViewCell else { return UICollectionViewCell() }
         let task = tasks[indexPath.row]
+        
         cell.configure(with: .init(task))
         return cell
     }
@@ -67,7 +79,7 @@ extension TasksPresenter: UICollectionViewDelegate {
 }
 
 private extension TasksCellCollectionViewCell.Model {
-    init(_ model: TaskProtocol) {
+    init(_ model: Task) {
         descriptionOfTask = model.descriptionTask
     }
 }
