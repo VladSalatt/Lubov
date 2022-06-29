@@ -13,8 +13,11 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     // MARK: - Constants
     
     private enum Constants {
-        static let bottomInset: CGFloat = 50
-        static let topInset: CGFloat = bottomInset
+        static let verticalInset: CGFloat = 50
+        static let horizontalInset: CGFloat = 24
+        static let toiletOpened: String = "toilet-opened"
+        static let toiletHalfOpened: String = "toilet-half-opened"
+        static let toiletClosed: String = "toilet-closed"
     }
     
     // MARK: - properties
@@ -25,15 +28,15 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     
     private let toiletImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "toilet-closed")
+        imageView.image = UIImage(named: Constants.toiletClosed)
         imageView.animationDuration = 0.7
         imageView.animationRepeatCount = 1
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         imageView.animationImages = [
-            UIImage(named: "toilet-opened")!,
-            UIImage(named: "toilet-half-opened")!,
-            UIImage(named: "toilet-closed")!
+            UIImage(named: Constants.toiletOpened)!,
+            UIImage(named: Constants.toiletHalfOpened)!,
+            UIImage(named: Constants.toiletClosed)!
         ]
         
         return imageView
@@ -63,16 +66,15 @@ private extension KnownBySquareVC {
     func setupUI() {
         title = "Узнаешь его по квадратности :-D"
         view.backgroundColor = .darkBlueColor
+        view.addSubview(toiletImageView)
         makeConstraints()
     }
     
     func makeConstraints() {
         // ToiletImage
-        view.addSubview(toiletImageView)
-        let toiletHeight = view.frame.height / 2 - (2 * Constants.bottomInset)
         NSLayoutConstraint.activate([
-            toiletImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.bottomInset),
-            toiletImageView.heightAnchor.constraint(equalToConstant: toiletHeight),
+            toiletImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.verticalInset),
+            toiletImageView.heightAnchor.constraint(equalToConstant: view.frame.height / 2 - (2 * Constants.verticalInset)),
             toiletImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
