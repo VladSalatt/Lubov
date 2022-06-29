@@ -23,7 +23,9 @@
 		C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADC285148A700A6723F /* TasksRouter.swift */; };
 		C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */; };
 		EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BA286BBC27008C7829 /* Task.xcdatamodeld */; };
-		EA3152C0286BC9E8008C7829 /* UserDefaults+FirstOpen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BF286BC9E8008C7829 /* UserDefaults+FirstOpen.swift */; };
+		EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BF286BC9E8008C7829 /* Storage.swift */; };
+		EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152C1286BD862008C7829 /* UILabel+Ext.swift */; };
+		EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152C3286BDF3E008C7829 /* Tasks+CoreData.swift */; };
 		EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A251E285F6863001BA96C /* UIColor+Ext.swift */; };
 		EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F3FE2845444100179D6E /* AppDelegate.swift */; };
 		EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F4002845444100179D6E /* SceneDelegate.swift */; };
@@ -50,7 +52,9 @@
 		C5A30ADC285148A700A6723F /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
 		C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouterProtocol.swift; sourceTree = "<group>"; };
 		EA3152BB286BBC27008C7829 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
-		EA3152BF286BC9E8008C7829 /* UserDefaults+FirstOpen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstOpen.swift"; sourceTree = "<group>"; };
+		EA3152BF286BC9E8008C7829 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		EA3152C1286BD862008C7829 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		EA3152C3286BDF3E008C7829 /* Tasks+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreData.swift"; sourceTree = "<group>"; };
 		EA4A251E285F6863001BA96C /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		EA99F3FB2845444100179D6E /* lubov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lubov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99F3FE2845444100179D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +80,6 @@
 		C52E4BC428468B6A00DE44E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				EA3152BE286BC9A4008C7829 /* Storage */,
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
 			);
@@ -86,6 +89,7 @@
 		C52E4BC528468B8A00DE44E3 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				EA3152BE286BC9A4008C7829 /* Storage */,
 				EA1E675C28679198004BF704 /* Model */,
 				C52E4BC928468BE600DE44E3 /* Configurator */,
 				C52E4BC828468BDD00DE44E3 /* Router */,
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				C52E4BCE28468FCB00DE44E3 /* TasksPresenter.swift */,
+				EA3152C3286BDF3E008C7829 /* Tasks+CoreData.swift */,
 				C52E4BD02846903800DE44E3 /* TasksViewOutput.swift */,
 			);
 			path = Presenter;
@@ -212,7 +217,7 @@
 		EA3152BE286BC9A4008C7829 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				EA3152BF286BC9E8008C7829 /* UserDefaults+FirstOpen.swift */,
+				EA3152BF286BC9E8008C7829 /* Storage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */,
 				EA4A251E285F6863001BA96C /* UIColor+Ext.swift */,
+				EA3152C1286BD862008C7829 /* UILabel+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,7 +335,9 @@
 			files = (
 				C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */,
 				EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */,
+				EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */,
 				C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */,
+				EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
@@ -347,7 +355,7 @@
 				EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */,
 				C55AEACA2868B80500EB0FFF /* KnownBySquareViewOutput.swift in Sources */,
 				EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */,
-				EA3152C0286BC9E8008C7829 /* UserDefaults+FirstOpen.swift in Sources */,
+				EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */,
 				C52E4BCB28468E9F00DE44E3 /* TasksCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

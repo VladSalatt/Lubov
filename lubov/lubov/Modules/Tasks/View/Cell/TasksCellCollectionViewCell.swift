@@ -54,7 +54,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
     /// Иными словами во вне мы будем вызывать только его
     func configure(with model: Model) {
-        titleTaskLabel.text = model.descriptionOfTask
+        titleTaskLabel.setTextOrHide(model.descriptionOfTask)
     }
     
     // Эта херня отвечает за динамическую высоту ячейки и распределению ее по всей длине экрана
@@ -69,7 +69,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
 extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
     struct Model {
-        let descriptionOfTask: String
+        let descriptionOfTask: String?
     }
 }
 

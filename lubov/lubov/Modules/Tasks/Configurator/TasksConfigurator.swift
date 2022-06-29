@@ -12,7 +12,7 @@ final class TasksConfigurator {
         let view = TasksCVC(collectionViewLayout: UICollectionViewFlowLayout())
         let navigationController = UINavigationController(rootViewController: view)
         let router = TasksRouter(view: view)
-        let presenter = TasksPresenter(view: view, router: router)
+        let presenter = TasksPresenter(view: view, router: router, userDefaults: UserDefaults.standard)
         view.presenter = presenter
         
         return navigationController

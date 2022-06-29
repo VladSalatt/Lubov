@@ -6,6 +6,6 @@
 //
 
 protocol TasksViewOutput: AnyObject {
-    init(view: TasksViewInput, router: TasksRouterProtocol)
+    init(view: TasksViewInput, router: TasksRouterProtocol, userDefaults: UserDefaultsStorage)
     func moveToTask(at: Screens) // call same func in router
 }
