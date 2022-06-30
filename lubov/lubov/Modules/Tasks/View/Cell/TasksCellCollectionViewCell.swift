@@ -67,14 +67,6 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
-    // MARK: - Methods
-    
-    /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
-    /// Иными словами во вне мы будем вызывать только его
-    func configure(with model: Model) {
-        titleTaskLabel.text = model.descriptionOfTask
-    }
-    
 }
 
 // MARK: - Model
