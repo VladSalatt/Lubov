@@ -53,6 +53,11 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         layer.shadowOffset = .init(width: 3, height: 4)
     }
     
+    /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
+    /// Иными словами во вне мы будем вызывать только его
+    func configure(with model: Model) {
+        titleTaskLabel.setTextOrHide(model.descriptionOfTask)
+    }
     
     // Эта херня отвечает за динамическую высоту ячейки и распределению ее по всей длине экрана
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
@@ -77,7 +82,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
 extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
     struct Model {
-        let descriptionOfTask: String
+        let descriptionOfTask: String?
     }
 }
 
