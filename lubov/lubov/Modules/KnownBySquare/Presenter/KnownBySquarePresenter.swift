@@ -68,14 +68,11 @@ extension KnownBySquarePresenter {
             orientationNew = UIInterfaceOrientation(rawValue: 0)!
         }
         
-        if orientationLast.rawValue == 2 && orientationNew.rawValue == 1 {
-            print("Square drop in toilet")
-        }
-        
         if orientationNew != orientationLast && orientationNew != .unknown {
             orientationLast = orientationNew
             if orientationNew.rawValue == 2 {
-                print("Drop square")
+                view?.animateSquare()
+                print("dropup")
             }
         }
         
