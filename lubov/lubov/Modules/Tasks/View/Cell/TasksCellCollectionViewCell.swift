@@ -10,7 +10,7 @@ import UIKit
 final class TasksCellCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-
+    
     static let reuseId = "tasksCellId"
     
     private enum Constants {
@@ -18,7 +18,7 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         static let verticalInset: CGFloat = 10
         static let insetOfCellFromSuperview: CGFloat = 24
     }
-
+    
     // MARK: - Views
     
     private lazy var titleTaskLabel: UILabel = {
@@ -43,6 +43,8 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCylce
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         // Со всеми этими значениями можно поиграться и выбрать лучший вариант
@@ -64,7 +66,18 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 50
         return layoutAttributes
     }
+    
+    // MARK: - Methods
+    
+    /// Метод, который конфигурирует ячейку, все данные в ячейку передаем ТОЛЬКО ЧЕРЕЗ НЕГО
+    /// Иными словами во вне мы будем вызывать только его
+    func configure(with model: Model) {
+        titleTaskLabel.text = model.descriptionOfTask
+    }
+    
 }
+
+// MARK: - Model
 
 extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
@@ -72,6 +85,8 @@ extension TasksCellCollectionViewCell {
         let descriptionOfTask: String?
     }
 }
+
+// MARK: - Setup UI
 
 private extension TasksCellCollectionViewCell {
     func setupUI() {

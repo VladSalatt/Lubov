@@ -9,6 +9,9 @@ import UIKit
 
 // TODO: 3) Занести цветовую палитру
 final class TasksCVC: UICollectionViewController {
+    
+    // MARK: - Constants
+    
     private enum Constants {
         static let collectionViewInsets: UIEdgeInsets = .init(
             top: 0,
