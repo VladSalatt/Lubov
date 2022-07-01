@@ -68,6 +68,7 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.type = .star
         view.intensity = 0.75
+        view.isHidden = true
         return view
     }()
     
@@ -227,11 +228,13 @@ private extension KnownBySquareVC {
                 switch result {
                 case .success():
                     // TODO: Добавить сохранение в кор дату и обновление флага (isCompleted)
+                    self.confettiView.isHidden = false
                     self.confettiView.startConfetti()
                     self.squareImageView.stopAnimating()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         guard self.confettiView.isActive() else { return }
                         self.confettiView.stopConfetti()
+                        self.confettiView.isHidden = true
                     }
                 case .failure(_):
                     break
