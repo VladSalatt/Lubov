@@ -241,7 +241,7 @@ private extension KnownBySquareVC {
                 }
             },
             closeAction: { [weak self] in
-                guard let self = self else { return }
+                guard let self = self, self.squareImageView.isAnimating else { return }
                 self.squareImageView.stopAnimating()
             }
         )
