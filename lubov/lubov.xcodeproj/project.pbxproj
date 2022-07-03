@@ -36,6 +36,11 @@
 		EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */; };
 		EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */; };
 		EACD35F228687AE300D94F0F /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD35F128687AE300D94F0F /* Screens.swift */; };
+		EAE545E028720E25009AEC10 /* BookCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */; };
+		EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */; };
+		EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */; };
+		EAE545E428720E25009AEC10 /* BookCodeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DE28720E25009AEC10 /* BookCodeConfigurator.swift */; };
+		EAE545E92872149D009AEC10 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545E82872149D009AEC10 /* Strings.swift */; };
 		EAEB293C286E3E4F003A8BBC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB293B286E3E4F003A8BBC /* AlertView.swift */; };
 		EAEB293F286E5036003A8BBC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB293E286E5036003A8BBC /* Errors.swift */; };
 		EAEB2941286E5138003A8BBC /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB2940286E5138003A8BBC /* String+Ext.swift */; };
@@ -75,6 +80,11 @@
 		EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertview.swift; sourceTree = "<group>"; };
 		EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		EACD35F128687AE300D94F0F /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodePresenter.swift; sourceTree = "<group>"; };
+		EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeRouter.swift; sourceTree = "<group>"; };
+		EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeViewController.swift; sourceTree = "<group>"; };
+		EAE545DE28720E25009AEC10 /* BookCodeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeConfigurator.swift; sourceTree = "<group>"; };
+		EAE545E82872149D009AEC10 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		EAEB293B286E3E4F003A8BBC /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		EAEB293E286E5036003A8BBC /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		EAEB2940286E5138003A8BBC /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 			children = (
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
+				EAE545E628720E31009AEC10 /* BookCode */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -274,10 +285,30 @@
 		EAC6FCB72857CD9300677A85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EAE545E728721490009AEC10 /* Shared */,
 				EAEB293A286E3E3A003A8BBC /* Controls */,
 				EAEB293D286E5024003A8BBC /* Extensions */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EAE545E628720E31009AEC10 /* BookCode */ = {
+			isa = PBXGroup;
+			children = (
+				EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */,
+				EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */,
+				EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */,
+				EAE545DE28720E25009AEC10 /* BookCodeConfigurator.swift */,
+			);
+			path = BookCode;
+			sourceTree = "<group>";
+		};
+		EAE545E728721490009AEC10 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EAE545E82872149D009AEC10 /* Strings.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		EAEB293A286E3E3A003A8BBC /* Controls */ = {
@@ -428,6 +459,7 @@
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
 				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
+				EAE545E92872149D009AEC10 /* Strings.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
 				C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */,
 				C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */,
@@ -436,12 +468,16 @@
 				EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */,
 				C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */,
 				C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */,
+				EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */,
+				EAE545E428720E25009AEC10 /* BookCodeConfigurator.swift in Sources */,
 				C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */,
 				C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */,
 				EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */,
 				EAEB2941286E5138003A8BBC /* String+Ext.swift in Sources */,
+				EAE545E028720E25009AEC10 /* BookCodePresenter.swift in Sources */,
 				EAEB293C286E3E4F003A8BBC /* AlertView.swift in Sources */,
 				C55AEACA2868B80500EB0FFF /* KnownBySquareViewOutput.swift in Sources */,
+				EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */,
 				EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */,
 				EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */,
 				C52E4BCB28468E9F00DE44E3 /* TasksCVC.swift in Sources */,

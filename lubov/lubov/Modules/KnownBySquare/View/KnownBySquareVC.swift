@@ -83,6 +83,7 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.addCoreMotion()
+        showSimpleAlert()
     }
     
 }
