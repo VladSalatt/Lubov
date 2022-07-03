@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+enum CDKeys {
+    static let isCompleted: String = "isCompleted"
+}
+
 extension TasksPresenter {
     func fetchTasks() -> [Task] {
         guard

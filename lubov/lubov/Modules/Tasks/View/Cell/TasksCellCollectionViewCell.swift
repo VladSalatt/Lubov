@@ -31,6 +31,12 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var style: Style = .normal {
+        didSet {
+            updateUI()
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -57,6 +63,8 @@ final class TasksCellCollectionViewCell: UICollectionViewCell {
     /// Иными словами во вне мы будем вызывать только его
     func configure(with model: Model) {
         titleTaskLabel.setTextOrHide(model.descriptionOfTask)
+        style = model.style
+        isHidden = model.isHidden
     }
     
     // Эта херня отвечает за динамическую высоту ячейки и распределению ее по всей длине экрана
@@ -75,6 +83,14 @@ extension TasksCellCollectionViewCell {
     /// Модель данных, которая приходит извне. И после конфигурирует ячейку
     struct Model {
         let descriptionOfTask: String?
+        let style: Style
+        let isHidden: Bool
+    }
+    
+    /// Стили ячеек
+    enum Style {
+        case normal
+        case success
     }
 }
 
@@ -103,5 +119,14 @@ private extension TasksCellCollectionViewCell {
             titleTaskLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleTaskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
+    }
+    
+    func updateUI() {
+        switch style {
+        case .normal:
+            backgroundColor = .sandColor
+        case .success:
+            backgroundColor = .darkGreenColor
+        }
     }
 }

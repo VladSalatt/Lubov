@@ -9,7 +9,6 @@ import UIKit
 import CoreMotion
 import SwiftConfettiView
 
-// TODO: Добавить сохранение в кор дату и обновление флага (isCompleted)
 final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     
     // MARK: - Properties
@@ -227,7 +226,7 @@ private extension KnownBySquareVC {
                 guard let self = self else { return }
                 switch result {
                 case .success():
-                    // TODO: Добавить сохранение в кор дату и обновление флага (isCompleted)
+                    self.presenter?.saveTask(at: .knownBySquare)
                     self.confettiView.isHidden = false
                     self.confettiView.startConfetti()
                     self.squareImageView.stopAnimating()
