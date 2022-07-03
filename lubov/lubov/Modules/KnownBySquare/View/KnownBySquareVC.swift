@@ -7,11 +7,12 @@
 
 import UIKit
 import CoreMotion
+import SwiftConfettiView
 
 final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
     
-    // MARK: - Constants
-    
+    // MARK: - Properties
+
     private enum Constants {
         static let verticalInset: CGFloat = 50
         static let horizontalInset: CGFloat = 24
@@ -22,11 +23,14 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
         static let squareTalk: String = "square-talk"
     }
     
-    // MARK: - properties
     
     var presenter: KnownBySquareViewOutput?
     
     private var isToiletOpen: Bool = false
+    private var squareCenterYConstraint: NSLayoutConstraint?
+    private var squareOffset: CGFloat?
+    
+    // MARK: - Views
     
     private let toiletImageView: UIImageView = {
         let imageView = UIImageView()
@@ -58,8 +62,14 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
         return imageView
     }()
     
-    private var squareCenterYConstraint: NSLayoutConstraint?
-    private var squareOffset: CGFloat?
+    private lazy var confettiView: SwiftConfettiView = {
+        let view = SwiftConfettiView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.type = .star
+        view.intensity = 0.75
+        view.isHidden = true
+        return view
+    }()
     
     // MARK: - LifeCycle
     
@@ -80,14 +90,23 @@ final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
 // MARK: - SetupUI
 
 private extension KnownBySquareVC {
-    
     func setupUI() {
-        title = "Узнаешь его по квадратности :-D"
-        navigationController?.setTitle(with: .sandColor)
         view.backgroundColor = .darkBlueColor
         view.addSubview(squareImageView)
         view.addSubview(toiletImageView)
+        view.addSubview(confettiView)
+        setupNavBar()
         makeConstraints()
+    }
+    
+    func setupNavBar() {
+        title = "Узнаешь его по квадратности :-D"
+        navigationController?.setTitle(with: .sandColor)
+        navigationItem.rightBarButtonItem = .init(
+            barButtonSystemItem: .bookmarks,
+            target: self,
+            action: #selector(showSimpleAlert)
+        )
     }
     
     func makeConstraints() {
@@ -111,7 +130,14 @@ private extension KnownBySquareVC {
         squareCenterYConstraint?.isActive = true
         // Рассчет смещения для анимации квадратика
         squareOffset = view.frame.height - toileghtHeight - view.safeAreaInsets.top
-        
+
+        //Confetti
+        NSLayoutConstraint.activate([
+            confettiView.topAnchor.constraint(equalTo: view.topAnchor),
+            confettiView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            confettiView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            confettiView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
     }
     
 }
@@ -120,7 +146,6 @@ private extension KnownBySquareVC {
 
 // For Toilet
 private extension KnownBySquareVC {
-    
     func addGesture() {
         let toiletTap = UITapGestureRecognizer()
         let squareTap = UITapGestureRecognizer()
@@ -148,7 +173,6 @@ private extension KnownBySquareVC {
 // MARK: - Animations
 
 extension KnownBySquareVC {
-    
     func updateStateOfToilet() {
         toiletImageView.animationImages?.swapAt(0, 2)
         toiletImageView.startAnimating()
@@ -161,29 +185,7 @@ extension KnownBySquareVC {
      
     @objc func updateSquareImage() {
         squareImageView.startAnimating()
-        let alertVC = UIAlertController(
-            title: "Answer",
-            message: "Клаудий юрий цезарь говорил: хуй",
-            preferredStyle: .alert
-        )
-
-        let closeAction = UIAlertAction(
-            title: "Закрыть",
-            style: .cancel) { [weak self] _ in
-                self?.squareImageView.stopAnimating()
-            }
-
-        let checkAction = UIAlertAction(
-            title: "Проверить",
-            style: .default,
-            // Проверять
-            handler: nil
-        )
-
-        alertVC.addAction(closeAction)
-        alertVC.addAction(checkAction)
-        present(alertVC, animated: true)
-        
+        showQuestionAlert()
     }
    
     func animateSquare() {
@@ -202,6 +204,47 @@ extension KnownBySquareVC {
             self.view.layoutIfNeeded()
         }
     }
+}
+
+// MARK: - UIAlert
+
+private extension KnownBySquareVC {
+    @objc func showSimpleAlert() {
+        let alertVC = SimpleAlertview(
+            title: "Задание",
+            message: "Описание задания"
+        )
+        present(alertVC, animated: true)
+    }
     
+    func showQuestionAlert() {
+        let alertVC = AlertView(
+            title: "test",
+            message: "test",
+            correctAnswer: "test",
+            checkAction: { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success():
+                    self.presenter?.saveTask(at: .knownBySquare)
+                    self.confettiView.isHidden = false
+                    self.confettiView.startConfetti()
+                    self.squareImageView.stopAnimating()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        guard self.confettiView.isActive() else { return }
+                        self.confettiView.stopConfetti()
+                        self.confettiView.isHidden = true
+                    }
+                case .failure(_):
+                    break
+                }
+            },
+            closeAction: { [weak self] in
+                guard let self = self, self.squareImageView.isAnimating else { return }
+                self.squareImageView.stopAnimating()
+            }
+        )
+        present(alertVC, animated: true)
+    }
 }
 

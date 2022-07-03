@@ -61,9 +61,15 @@ extension TasksPresenter: UICollectionViewDataSource {
             withReuseIdentifier: TasksCellCollectionViewCell.reuseId,
             for: indexPath
         ) as? TasksCellCollectionViewCell else { return UICollectionViewCell() }
-        let task = tasks[indexPath.row]
         
-        cell.configure(with: .init(task))
+        let task = tasks[indexPath.row]
+        let isHidden: Bool = {
+            guard task.id != 0 else { return false }
+            let previousTask = tasks[indexPath.row - 1]
+            return previousTask.isCompleted ? false : true
+        }()
+
+        cell.configure(with: .init(task, isHidden))
         return cell
     }
 }
@@ -79,7 +85,9 @@ extension TasksPresenter: UICollectionViewDelegate {
 }
 
 private extension TasksCellCollectionViewCell.Model {
-    init(_ model: Task) {
+    init(_ model: Task, _ isHidden: Bool) {
         descriptionOfTask = model.descriptionTask
+        style = model.isCompleted ? .success : .normal
+        self.isHidden = isHidden
     }
 }

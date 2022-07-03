@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreMotion
+import CoreData
 
 final class KnownBySquarePresenter: NSObject, KnownBySquareViewOutput {
     
@@ -77,6 +78,40 @@ extension KnownBySquarePresenter {
         }
         
     }
+}
+
+extension KnownBySquarePresenter {
+    func saveTask(at screen: Screens) {
+        guard
+            let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        else { return }
+
+        let fetchResult = fetch(context)
+        let index = Screens.allCases.firstIndex(of: screen) ?? 0 as Int
+        let managedObject = fetchResult[index]
+        managedObject.setValue(true, forKey: CDKeys.isCompleted)
+        save(context)
+    }
+}
+
+private extension KnownBySquarePresenter {
+    func save(_ context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
-    
+    func fetch(_ context: NSManagedObjectContext) -> [Task] {
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+    }
 }
