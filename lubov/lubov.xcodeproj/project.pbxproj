@@ -13,6 +13,11 @@
 		C52E4BCF28468FCB00DE44E3 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E4BCE28468FCB00DE44E3 /* TasksPresenter.swift */; };
 		C52E4BD12846903800DE44E3 /* TasksViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E4BD02846903800DE44E3 /* TasksViewOutput.swift */; };
 		C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E4BD2284690F300DE44E3 /* TasksConfigurator.swift */; };
+		C54516DE2872631A00619CD1 /* CrosswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516DD2872631A00619CD1 /* CrosswordConfigurator.swift */; };
+		C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516DF287263A900619CD1 /* CrosswordPresenter.swift */; };
+		C54516E22872647A00619CD1 /* CrosswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516E12872647A00619CD1 /* CrosswordRouter.swift */; };
+		C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516E3287264EA00619CD1 /* CrosswordVC.swift */; };
+		C54AB951287288C700DBE435 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54AB950287288C700DBE435 /* Strings.swift */; };
 		C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEABF286893DA00EB0FFF /* KnownBySquareVC.swift */; };
 		C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC1286893E500EB0FFF /* KnownBySquarePresenter.swift */; };
 		C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC3286893F000EB0FFF /* KnownBySquareRouter.swift */; };
@@ -48,6 +53,11 @@
 		C52E4BCE28468FCB00DE44E3 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
 		C52E4BD02846903800DE44E3 /* TasksViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewOutput.swift; sourceTree = "<group>"; };
 		C52E4BD2284690F300DE44E3 /* TasksConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksConfigurator.swift; sourceTree = "<group>"; };
+		C54516DD2872631A00619CD1 /* CrosswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordConfigurator.swift; sourceTree = "<group>"; };
+		C54516DF287263A900619CD1 /* CrosswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordPresenter.swift; sourceTree = "<group>"; };
+		C54516E12872647A00619CD1 /* CrosswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordRouter.swift; sourceTree = "<group>"; };
+		C54516E3287264EA00619CD1 /* CrosswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordVC.swift; sourceTree = "<group>"; };
+		C54AB950287288C700DBE435 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		C55AEABF286893DA00EB0FFF /* KnownBySquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareVC.swift; sourceTree = "<group>"; };
 		C55AEAC1286893E500EB0FFF /* KnownBySquarePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquarePresenter.swift; sourceTree = "<group>"; };
 		C55AEAC3286893F000EB0FFF /* KnownBySquareRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareRouter.swift; sourceTree = "<group>"; };
@@ -112,6 +122,7 @@
 		C52E4BC428468B6A00DE44E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C54516DC287262EA00619CD1 /* Crossword */,
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
 			);
@@ -166,6 +177,25 @@
 				C52E4BD2284690F300DE44E3 /* TasksConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		C54516DC287262EA00619CD1 /* Crossword */ = {
+			isa = PBXGroup;
+			children = (
+				C54516DD2872631A00619CD1 /* CrosswordConfigurator.swift */,
+				C54516DF287263A900619CD1 /* CrosswordPresenter.swift */,
+				C54516E12872647A00619CD1 /* CrosswordRouter.swift */,
+				C54516E3287264EA00619CD1 /* CrosswordVC.swift */,
+			);
+			path = Crossword;
+			sourceTree = "<group>";
+		};
+		C54AB94F287288B300DBE435 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C54AB950287288C700DBE435 /* Strings.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		C55AEAB92868937900EB0FFF /* KnownBySquare */ = {
@@ -274,6 +304,7 @@
 		EAC6FCB72857CD9300677A85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C54AB94F287288B300DBE435 /* Shared */,
 				EAEB293A286E3E3A003A8BBC /* Controls */,
 				EAEB293D286E5024003A8BBC /* Extensions */,
 			);
@@ -417,15 +448,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56A0D7A286E2725008AA729 /* UINavigationController+Ext.swift in Sources */,
+				C54516DE2872631A00619CD1 /* CrosswordConfigurator.swift in Sources */,
 				C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */,
 				EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */,
 				EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */,
 				C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */,
+				C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */,
 				EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */,
 				EAEB293F286E5036003A8BBC /* Errors.swift in Sources */,
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
+				C54AB951287288C700DBE435 /* Strings.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
 				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
@@ -436,7 +470,9 @@
 				EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */,
 				C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */,
 				C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */,
+				C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */,
 				C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */,
+				C54516E22872647A00619CD1 /* CrosswordRouter.swift in Sources */,
 				C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */,
 				EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */,
 				EAEB2941286E5138003A8BBC /* String+Ext.swift in Sources */,

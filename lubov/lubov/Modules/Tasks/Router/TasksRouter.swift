@@ -29,8 +29,8 @@ final class TasksRouter: TasksRouterProtocol {
             viewController = KnownBySquareConfigurator.configure()
         case .second:
             viewController = UIViewController()
-        case .third:
-            viewController = UIViewController()
+        case .crossword:
+            viewController = CrosswordConfigurator.configure()
         case .fourth:
             viewController = UIViewController()
         case .fifth:

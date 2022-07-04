@@ -28,8 +28,8 @@ struct TaskStorage {
     // Initial names for tasks
     static let names: [String] = [
         "Узнаешь его по квадратности xD",
-        "2",
-        "3",
+        "Парфюмер",
+        "Кроссворд",
         "4",
         "5"
     ]
