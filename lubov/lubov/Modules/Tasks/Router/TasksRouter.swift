@@ -27,8 +27,8 @@ final class TasksRouter: TasksRouterProtocol {
         switch screen {
         case .knownBySquare:
             viewController = KnownBySquareConfigurator.configure()
-        case .second:
-            viewController = UIViewController()
+        case .bookCode:
+            viewController = BookCodeConfigurator.configure()
         case .third:
             viewController = UIViewController()
         case .fourth:

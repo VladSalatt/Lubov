@@ -80,6 +80,8 @@ extension KnownBySquarePresenter {
     }
 }
 
+// MARK: - Core Data
+
 extension KnownBySquarePresenter {
     func saveTask(at screen: Screens) {
         guard
