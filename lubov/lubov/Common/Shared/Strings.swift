@@ -31,12 +31,12 @@ enum Strings {
     enum Crossword {
         static let cellTitle: String = "Кроссворд"
         enum SimpleAlert {
-            static let title: String = "Описание 3"
-            static let message: String = "Описание 3"
+            static let title: String = "Пути самурая"
+            static let message: String = "У России 3 пути..."
         }
         enum QuestionAlert {
-            static let title: String = "Задание 3"
-            static let message: String = "Задание 3"
+            static let title: String = "Так так так"
+            static let message: String = "Ты уверена??"
             static let correctAnswer: String = "узел"
         }
     }

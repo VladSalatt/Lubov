@@ -75,6 +75,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     private let firstWayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
         label.textColor = .darkBlueColor
         label.font = .boldSystemFont(ofSize: 24)
         label.text = "Путь 1"
@@ -86,6 +87,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     private let secondWayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
         label.textColor = .darkBlueColor
         label.font = .boldSystemFont(ofSize: 24)
         label.text = "Путь 2"
@@ -97,6 +99,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     private let thirdWayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
         label.textColor = .darkBlueColor
         label.font = .boldSystemFont(ofSize: 24)
         label.text = "Путь 3"
@@ -111,6 +114,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Я знаю ответ!", for: .normal)
         button.setTitleColor(.darkBlueColor, for: .normal)
+        button.setTitleColor(.lightBlueColor, for: .highlighted)
         button.layer.cornerRadius = 10
         button.layer.shadowOpacity = 0.3
         button.layer.shadowOffset = .init(width: 3, height: 4)
@@ -229,14 +233,68 @@ private extension CrosswordVC {
     }
     
     func addGesture() {
+        let firstLabelTap = UITapGestureRecognizer()
+        let secondLabelTap = UITapGestureRecognizer()
+        let thirdLabelTap = UITapGestureRecognizer()
         
+        firstWayLabel.addGestureRecognizer(firstLabelTap)
+        secondWayLabel.addGestureRecognizer(secondLabelTap)
+        thirdWayLabel.addGestureRecognizer(thirdLabelTap)
+        
+        firstLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
+        secondLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
+        thirdLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
+        answerButton.addTarget(self, action: #selector(showQuestionAlert), for: .touchUpInside)
     }
+    
     
 }
 
 // MARK: - Alerts
 
 private extension CrosswordVC {
+    
+    @objc func getWayAlert(tap: UITapGestureRecognizer) {
+        guard let label = tap.view as? UILabel else { return }
+        var newText = ""
+        let alert = UIAlertController(
+            title: "Какой путь?",
+            message: "Этот? - \(label.text ?? "")",
+            preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = label.text ?? ""
+        }
+        let doneAction = UIAlertAction(
+            title: "Ввести",
+            style: .default) { [weak alert, self] (_) in
+                guard let textField = alert?.textFields?[0] else { return }
+                newText = textField.text ?? ""
+                self.updateTextLabel(of: label, with: newText)
+            }
+        let cancelAction = UIAlertAction(title: "Надо еще подумац", style: .cancel)
+        alert.addAction(doneAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+        
+   }
+    
+    func updateTextLabel(of label: UILabel, with newText: String) {
+        var text = newText
+        switch label {
+        case firstWayLabel:
+            text = text.replaceCharacter(at: 0, with: "_")
+            text = text.replaceCharacter(at: 1, with: "_")
+        case secondWayLabel:
+            text = text.replaceCharacter(at: 0, with: "_")
+        case thirdWayLabel:
+            text = text.replaceCharacter(at: 3, with: "_")
+        default:
+            return
+        }
+        
+        label.text = text
+        
+    }
     
     @objc func showSimpleAlert() {
         let alertVC = SimpleAlertview(
