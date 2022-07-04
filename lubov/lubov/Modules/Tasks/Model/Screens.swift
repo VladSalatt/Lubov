@@ -9,7 +9,7 @@ import Foundation
 
 enum Screens: CaseIterable {
     case knownBySquare
-    case second
+    case bookCode
     case crossword
     case fourth
     case fifth

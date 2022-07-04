@@ -4,6 +4,7 @@
 //
 //  Created by VKoshelev@detmir.ru on 03.07.2022.
 //
+
 import Foundation
 
 /// Тут будут все текста для заданий, в том числе и правильные ответы

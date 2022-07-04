@@ -25,7 +25,6 @@ extension UserDefaults: UserDefaultsStorage {
 }
 
 struct TaskStorage {
-    // Initial names for tasks
     static let names: [String] = [
         "Узнаешь его по квадратности xD",
         "Парфюмер",
