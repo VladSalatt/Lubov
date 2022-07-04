@@ -7,6 +7,8 @@
 
 import Foundation
 
+// TODO: Переместить в shared
+// TODO: Добавить 8 картинок в CardStorage
 protocol UserDefaultsStorage {
     var isSecondOpen: Bool { get set }
 }
@@ -31,5 +33,58 @@ struct TaskStorage {
         "Кроссворд",
         "4",
         "5"
+    ]
+}
+
+struct CardStorage {
+    static let initialCards: [Card] = [
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
+        .init(
+            frontImageName: "square-silent",
+            backImageName: "square-talk",
+            isMatched: false,
+            isFlipped: false
+        ),
     ]
 }

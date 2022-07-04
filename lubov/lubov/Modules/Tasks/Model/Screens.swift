@@ -11,7 +11,6 @@ enum Screens: CaseIterable {
     case knownBySquare
     case bookCode
     case crossword
-    case fourth
+    case memoryGame
     case fifth
-    case sixth
 }

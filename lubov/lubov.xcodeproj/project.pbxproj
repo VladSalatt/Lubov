@@ -30,6 +30,12 @@
 		C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADA285147EF00A6723F /* TasksCellCollectionViewCell.swift */; };
 		C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADC285148A700A6723F /* TasksRouter.swift */; };
 		C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */; };
+		EA2445A22873A19A00074EAE /* MemoryGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */; };
+		EA2445A32873A19A00074EAE /* MemoryGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */; };
+		EA2445A42873A19A00074EAE /* MemoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */; };
+		EA2445A62873A19A00074EAE /* MemoryGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */; };
+		EA2445A72873A19A00074EAE /* MemoryGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */; };
+		EA2445AA2873A7B600074EAE /* MemoryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A92873A7B600074EAE /* MemoryCardCell.swift */; };
 		EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BA286BBC27008C7829 /* Task.xcdatamodeld */; };
 		EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BF286BC9E8008C7829 /* Storage.swift */; };
 		EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152C1286BD862008C7829 /* UILabel+Ext.swift */; };
@@ -42,6 +48,8 @@
 		EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */; };
 		EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */; };
 		EACD35F228687AE300D94F0F /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD35F128687AE300D94F0F /* Screens.swift */; };
+		EAD8014C28747A07001AF563 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD8014B28747A07001AF563 /* Card.swift */; };
+		EAD8014F28748F0E001AF563 /* MemoryGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */; };
 		EAE545E028720E25009AEC10 /* BookCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */; };
 		EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */; };
 		EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */; };
@@ -77,6 +85,12 @@
 		C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouterProtocol.swift; sourceTree = "<group>"; };
 		D3A1E880F4E0501C0D18BA99 /* Pods-lubov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lubov.release.xcconfig"; path = "Target Support Files/Pods-lubov/Pods-lubov.release.xcconfig"; sourceTree = "<group>"; };
 		DD11D2CF13DEF9B21E6FE71B /* Pods_lubov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lubov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGamePresenter.swift; sourceTree = "<group>"; };
+		EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameRouter.swift; sourceTree = "<group>"; };
+		EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewController.swift; sourceTree = "<group>"; };
+		EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameConfigurator.swift; sourceTree = "<group>"; };
+		EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameLogic.swift; sourceTree = "<group>"; };
+		EA2445A92873A7B600074EAE /* MemoryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardCell.swift; sourceTree = "<group>"; };
 		EA3152BB286BBC27008C7829 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 		EA3152BF286BC9E8008C7829 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		EA3152C1286BD862008C7829 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
@@ -91,6 +105,8 @@
 		EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertview.swift; sourceTree = "<group>"; };
 		EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		EACD35F128687AE300D94F0F /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		EAD8014B28747A07001AF563 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameResult.swift; sourceTree = "<group>"; };
 		EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodePresenter.swift; sourceTree = "<group>"; };
 		EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeRouter.swift; sourceTree = "<group>"; };
 		EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C54516DC287262EA00619CD1 /* Crossword */,
+				EA24459B2873A18700074EAE /* MemoryGame */,
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
 				EAE545E628720E31009AEC10 /* BookCode */,
@@ -282,6 +299,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EA24459B2873A18700074EAE /* MemoryGame */ = {
+			isa = PBXGroup;
+			children = (
+				EA2445A82873A78200074EAE /* Views */,
+				EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */,
+				EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */,
+				EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */,
+				EAD8014D28747A10001AF563 /* Models */,
+			);
+			path = MemoryGame;
+			sourceTree = "<group>";
+		};
+		EA2445A82873A78200074EAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */,
+				EA2445A92873A7B600074EAE /* MemoryCardCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EA3152BE286BC9A4008C7829 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +369,16 @@
 				EAEB293D286E5024003A8BBC /* Extensions */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EAD8014D28747A10001AF563 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */,
+				EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */,
+				EAD8014B28747A07001AF563 /* Card.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EAE545E628720E31009AEC10 /* BookCode */ = {
@@ -490,21 +538,30 @@
 				C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */,
 				C54A13A62872D9C9003FFC93 /* Strings.swift in Sources */,
 				EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */,
+				EAD8014F28748F0E001AF563 /* MemoryGameResult.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */,
 				EAEB293F286E5036003A8BBC /* Errors.swift in Sources */,
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
+				EA2445A62873A19A00074EAE /* MemoryGameConfigurator.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
 				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
+				EAE545E92872149D009AEC10 /* Strings.swift in Sources */,
+				EA2445A32873A19A00074EAE /* MemoryGameRouter.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
+				EA2445A22873A19A00074EAE /* MemoryGamePresenter.swift in Sources */,
 				C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */,
+				EA2445AA2873A7B600074EAE /* MemoryCardCell.swift in Sources */,
 				C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */,
 				C52E4BD12846903800DE44E3 /* TasksViewOutput.swift in Sources */,
+				EA2445A42873A19A00074EAE /* MemoryGameViewController.swift in Sources */,
+				EA2445A72873A19A00074EAE /* MemoryGameLogic.swift in Sources */,
 				C52E4BCF28468FCB00DE44E3 /* TasksPresenter.swift in Sources */,
 				EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */,
 				C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */,
 				C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */,
 				EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */,
+				EAD8014C28747A07001AF563 /* Card.swift in Sources */,
 				EAE545E428720E25009AEC10 /* BookCodeConfigurator.swift in Sources */,
 				C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */,
 				C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */,
