@@ -17,7 +17,7 @@
 		C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516DF287263A900619CD1 /* CrosswordPresenter.swift */; };
 		C54516E22872647A00619CD1 /* CrosswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516E12872647A00619CD1 /* CrosswordRouter.swift */; };
 		C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54516E3287264EA00619CD1 /* CrosswordVC.swift */; };
-		C54AB951287288C700DBE435 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54AB950287288C700DBE435 /* Strings.swift */; };
+		C54A13A62872D9C9003FFC93 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A13A52872D9C9003FFC93 /* Strings.swift */; };
 		C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEABF286893DA00EB0FFF /* KnownBySquareVC.swift */; };
 		C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC1286893E500EB0FFF /* KnownBySquarePresenter.swift */; };
 		C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC3286893F000EB0FFF /* KnownBySquareRouter.swift */; };
@@ -45,7 +45,6 @@
 		EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */; };
 		EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */; };
 		EAE545E428720E25009AEC10 /* BookCodeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DE28720E25009AEC10 /* BookCodeConfigurator.swift */; };
-		EAE545E92872149D009AEC10 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545E82872149D009AEC10 /* Strings.swift */; };
 		EAEB293C286E3E4F003A8BBC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB293B286E3E4F003A8BBC /* AlertView.swift */; };
 		EAEB293F286E5036003A8BBC /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB293E286E5036003A8BBC /* Errors.swift */; };
 		EAEB2941286E5138003A8BBC /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB2940286E5138003A8BBC /* String+Ext.swift */; };
@@ -62,7 +61,7 @@
 		C54516DF287263A900619CD1 /* CrosswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordPresenter.swift; sourceTree = "<group>"; };
 		C54516E12872647A00619CD1 /* CrosswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordRouter.swift; sourceTree = "<group>"; };
 		C54516E3287264EA00619CD1 /* CrosswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordVC.swift; sourceTree = "<group>"; };
-		C54AB950287288C700DBE435 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		C54A13A52872D9C9003FFC93 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		C55AEABF286893DA00EB0FFF /* KnownBySquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareVC.swift; sourceTree = "<group>"; };
 		C55AEAC1286893E500EB0FFF /* KnownBySquarePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquarePresenter.swift; sourceTree = "<group>"; };
 		C55AEAC3286893F000EB0FFF /* KnownBySquareRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareRouter.swift; sourceTree = "<group>"; };
@@ -201,10 +200,18 @@
 			path = Crossword;
 			sourceTree = "<group>";
 		};
-		C54AB94F287288B300DBE435 /* Shared */ = {
+		C54A13A32872D993003FFC93 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				C54AB950287288C700DBE435 /* Strings.swift */,
+				EAE545E82872149D009AEC10 /* Strings.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		C54A13A42872D9C2003FFC93 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C54A13A52872D9C9003FFC93 /* Strings.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -287,6 +294,7 @@
 				EA99F3FC2845444100179D6E /* Products */,
 				6CB9DC140FEF8F830C888B5B /* Pods */,
 				7DCC9220AF1446391102FCC0 /* Frameworks */,
+				C54A13A32872D993003FFC93 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,7 +323,7 @@
 		EAC6FCB72857CD9300677A85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C54AB94F287288B300DBE435 /* Shared */,
+				C54A13A42872D9C2003FFC93 /* Shared */,
 				EAEB293A286E3E3A003A8BBC /* Controls */,
 				EAEB293D286E5024003A8BBC /* Extensions */,
 			);
@@ -331,14 +339,6 @@
 				EAE545DE28720E25009AEC10 /* BookCodeConfigurator.swift */,
 			);
 			path = BookCode;
-			sourceTree = "<group>";
-		};
-		EAE545E728721490009AEC10 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				EAE545E82872149D009AEC10 /* Strings.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		EAEB293A286E3E3A003A8BBC /* Controls */ = {
@@ -484,15 +484,14 @@
 				EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */,
 				C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */,
 				C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */,
+				C54A13A62872D9C9003FFC93 /* Strings.swift in Sources */,
 				EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */,
 				EAEB293F286E5036003A8BBC /* Errors.swift in Sources */,
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
-				C54AB951287288C700DBE435 /* Strings.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
 				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
-				EAE545E92872149D009AEC10 /* Strings.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
 				C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */,
 				C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */,
