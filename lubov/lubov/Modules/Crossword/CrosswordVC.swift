@@ -26,6 +26,15 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     
     var presenter: CrosswordViewOutput?
     
+    private var lubaLeadingConstraint: NSLayoutConstraint?
+    
+    private let lubaImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: Constants.imageOne)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let firstImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: Constants.imageOne)
@@ -40,6 +49,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
         imageView.image = UIImage(named: Constants.imageTwo)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -159,6 +169,7 @@ private extension CrosswordVC {
         view.addSubview(firstImageView)
         view.addSubview(secondImageView)
         view.addSubview(thirdImageView)
+        view.addSubview(lubaImageView)
         
         // Ways
         view.addSubview(boxView)
@@ -218,6 +229,9 @@ private extension CrosswordVC {
             thirdImageView.heightAnchor.constraint(equalTo: thirdImageView.widthAnchor),
             thirdImageView.topAnchor.constraint(equalTo: boxView.bottomAnchor, constant: Constants.verticalInset),
             
+            lubaImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
+            lubaImageView.heightAnchor.constraint(equalTo: lubaImageView.widthAnchor),
+            lubaImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.verticalInset),
             
             // Answer Button
             answerButton.leadingAnchor.constraint(equalTo: boxView.leadingAnchor),
@@ -230,20 +244,26 @@ private extension CrosswordVC {
             confettiView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             confettiView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+        lubaLeadingConstraint = lubaImageView.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: Constants.horizontalInset)
+        lubaLeadingConstraint?.isActive = true
+        
     }
     
     func addGesture() {
         let firstLabelTap = UITapGestureRecognizer()
         let secondLabelTap = UITapGestureRecognizer()
         let thirdLabelTap = UITapGestureRecognizer()
+        let imageTap = UITapGestureRecognizer()
         
         firstWayLabel.addGestureRecognizer(firstLabelTap)
         secondWayLabel.addGestureRecognizer(secondLabelTap)
         thirdWayLabel.addGestureRecognizer(thirdLabelTap)
+        secondImageView.addGestureRecognizer(imageTap)
         
         firstLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
         secondLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
         thirdLabelTap.addTarget(self, action: #selector(getWayAlert(tap:)))
+        imageTap.addTarget(self, action: #selector(showLuba))
         answerButton.addTarget(self, action: #selector(showQuestionAlert), for: .touchUpInside)
     }
     
@@ -276,7 +296,7 @@ private extension CrosswordVC {
         alert.addAction(cancelAction)
         present(alert, animated: true)
         
-   }
+    }
     
     func updateTextLabel(of label: UILabel, with newText: String) {
         var text = newText
@@ -328,5 +348,23 @@ private extension CrosswordVC {
             }
         )
         present(alertVC, animated: true)
+    }
+    
+    @objc func showLuba() {
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard
+                let self = self,
+                let constraint = self.lubaLeadingConstraint
+            else { return }
+            let offset = self.view.frame.width / 3 + Constants.horizontalInset + 20
+            constraint.constant -= offset
+            self.view.layoutIfNeeded()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                constraint.constant += offset
+                self.view.layoutIfNeeded()
+            }
+        }
+        
     }
 }
