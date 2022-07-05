@@ -28,7 +28,7 @@ struct TaskStorage {
     static let names: [String] = [
         "Узнаешь его по квадратности xD",
         "Парфюмер",
-        "3",
+        "Кроссворд",
         "4",
         "5"
     ]

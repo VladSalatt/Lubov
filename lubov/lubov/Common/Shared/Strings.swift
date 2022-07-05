@@ -28,4 +28,25 @@ enum Strings {
             static let correctAnswer: String = "test"
         }
     }
+    
+    enum Crossword {
+        static let cellTitle: String = "Кроссворд"
+        static let toastySound: String = "toastySound"
+        static let answerButtonTitle: String = "Я знаю ответ!"
+        enum SimpleAlert {
+            static let title: String = "Пути самурая"
+            static let message: String = "У России 3 пути..."
+        }
+        enum QuestionAlert {
+            static let title: String = "Так так так"
+            static let message: String = "Ты уверена??"
+            static let correctAnswer: String = "узел"
+        }
+        enum GetWayAlert {
+            static let title: String = "Какой путь?"
+            static let message: String = "Этот "
+            static let doneActionTitle: String = "Ввести"
+            static let cancelActionTitle: String = "Надо еще подумац"
+        }
+    }
 }
