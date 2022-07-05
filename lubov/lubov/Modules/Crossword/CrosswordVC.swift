@@ -192,8 +192,8 @@ private extension CrosswordVC {
         NSLayoutConstraint.activate([
             // BoxView
             boxView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/1.5),
-            boxView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             boxView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            boxView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.verticalInset),
             
             // WaysStackView
             waysStackView.leadingAnchor.constraint(equalTo: boxView.leadingAnchor, constant: Constants.horizontalInset),
@@ -205,24 +205,24 @@ private extension CrosswordVC {
             firstImageView.leadingAnchor.constraint(equalTo: boxView.leadingAnchor),
             firstImageView.widthAnchor.constraint(equalTo: boxView.widthAnchor, multiplier: 1/3.2),
             firstImageView.heightAnchor.constraint(equalTo: firstImageView.widthAnchor),
-            firstImageView.bottomAnchor.constraint(equalTo: boxView.topAnchor, constant: -5),
+            firstImageView.topAnchor.constraint(equalTo: boxView.bottomAnchor, constant: Constants.verticalInset),
             
             secondImageView.centerXAnchor.constraint(equalTo: boxView.centerXAnchor),
             secondImageView.widthAnchor.constraint(equalTo: boxView.widthAnchor, multiplier: 1/3.2),
             secondImageView.heightAnchor.constraint(equalTo: secondImageView.widthAnchor),
-            secondImageView.bottomAnchor.constraint(equalTo: boxView.topAnchor, constant: -5),
+            secondImageView.topAnchor.constraint(equalTo: boxView.bottomAnchor, constant: Constants.verticalInset),
             
             
             thirdImageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
             thirdImageView.widthAnchor.constraint(equalTo: boxView.widthAnchor, multiplier: 1/3.2),
             thirdImageView.heightAnchor.constraint(equalTo: thirdImageView.widthAnchor),
-            thirdImageView.bottomAnchor.constraint(equalTo: boxView.topAnchor, constant: -5),
+            thirdImageView.topAnchor.constraint(equalTo: boxView.bottomAnchor, constant: Constants.verticalInset),
             
             
             // Answer Button
             answerButton.leadingAnchor.constraint(equalTo: boxView.leadingAnchor),
             answerButton.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
-            answerButton.topAnchor.constraint(equalTo: boxView.bottomAnchor, constant: Constants.verticalInset),
+            answerButton.topAnchor.constraint(equalTo: firstImageView.bottomAnchor, constant: Constants.verticalInset),
             
             // confetti
             confettiView.topAnchor.constraint(equalTo: view.topAnchor),
