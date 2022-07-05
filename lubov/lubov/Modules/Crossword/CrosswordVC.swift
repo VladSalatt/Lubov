@@ -18,6 +18,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     private enum Constants {
         static let horizontalInset: CGFloat = 16
         static let verticalInset: CGFloat = 16
+        static let lubaImage: String = "luba"
         static let imageOne: String = "inGlasses"
         static let imageTwo: String = "drink"
         static let imageThree: String = "coding"
@@ -30,7 +31,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     
     private let lubaImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Constants.imageOne)
+        imageView.image = UIImage(named: Constants.lubaImage)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -355,11 +356,13 @@ private extension CrosswordVC {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard
                 let self = self,
-                let constraint = self.lubaLeadingConstraint
+                let constraint = self.lubaLeadingConstraint,
+                let presenter = self.presenter
             else { return }
-            let offset = self.view.frame.width / 3 + Constants.horizontalInset + 20
+            let offset = self.view.frame.width / 3 + Constants.horizontalInset + 1
             constraint.constant -= offset
             self.view.layoutIfNeeded()
+            presenter.playSound()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 constraint.constant += offset
                 self.view.layoutIfNeeded()

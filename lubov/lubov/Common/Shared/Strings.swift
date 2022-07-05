@@ -31,6 +31,7 @@ enum Strings {
     
     enum Crossword {
         static let cellTitle: String = "Кроссворд"
+        static let toastySound: String = "toastySound"
         enum SimpleAlert {
             static let title: String = "Пути самурая"
             static let message: String = "У России 3 пути..."

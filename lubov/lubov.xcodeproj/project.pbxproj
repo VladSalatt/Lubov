@@ -25,6 +25,7 @@
 		C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC72868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift */; };
 		C55AEACA2868B80500EB0FFF /* KnownBySquareViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC92868B80500EB0FFF /* KnownBySquareViewOutput.swift */; };
 		C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEACB2868B80D00EB0FFF /* KnownBySquareViewInput.swift */; };
+		C55C8D3C28744EA200B57663 /* toastySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C55C8D3B28744EA200B57663 /* toastySound.mp3 */; };
 		C56A0D7A286E2725008AA729 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A0D79286E2725008AA729 /* UINavigationController+Ext.swift */; };
 		C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADA285147EF00A6723F /* TasksCellCollectionViewCell.swift */; };
 		C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADC285148A700A6723F /* TasksRouter.swift */; };
@@ -69,6 +70,7 @@
 		C55AEAC72868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareRouterProtocol.swift; sourceTree = "<group>"; };
 		C55AEAC92868B80500EB0FFF /* KnownBySquareViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareViewOutput.swift; sourceTree = "<group>"; };
 		C55AEACB2868B80D00EB0FFF /* KnownBySquareViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareViewInput.swift; sourceTree = "<group>"; };
+		C55C8D3B28744EA200B57663 /* toastySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = toastySound.mp3; path = ../../../../../Documents/toastySound.mp3; sourceTree = "<group>"; };
 		C56A0D79286E2725008AA729 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		C5A30ADA285147EF00A6723F /* TasksCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5A30ADC285148A700A6723F /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		C54516DC287262EA00619CD1 /* Crossword */ = {
 			isa = PBXGroup;
 			children = (
+				C55C8D3B28744EA200B57663 /* toastySound.mp3 */,
 				C54516DD2872631A00619CD1 /* CrosswordConfigurator.swift */,
 				C54516DF287263A900619CD1 /* CrosswordPresenter.swift */,
 				C54516E12872647A00619CD1 /* CrosswordRouter.swift */,
@@ -423,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55C8D3C28744EA200B57663 /* toastySound.mp3 in Resources */,
 				EA99F40B2845444200179D6E /* LaunchScreen.storyboard in Resources */,
 				EA99F4082845444200179D6E /* Assets.xcassets in Resources */,
 			);
