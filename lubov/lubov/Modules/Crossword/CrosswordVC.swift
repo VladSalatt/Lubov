@@ -123,7 +123,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
         let button = UIButton()
         let textLabel = UILabel()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Я знаю ответ!", for: .normal)
+        button.setTitle(CrosswordStr.answerButtonTitle, for: .normal)
         button.setTitleColor(.darkBlueColor, for: .normal)
         button.setTitleColor(.lightBlueColor, for: .highlighted)
         button.layer.cornerRadius = 10
@@ -279,20 +279,22 @@ private extension CrosswordVC {
         guard let label = tap.view as? UILabel else { return }
         var newText = ""
         let alert = UIAlertController(
-            title: "Какой путь?",
-            message: "Этот? - \(label.text ?? "")",
+            title: CrosswordStr.GetWayAlert.title,
+            message: CrosswordStr.GetWayAlert.title + "\(label.text ?? "") ?",
             preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.text = label.text ?? ""
         }
         let doneAction = UIAlertAction(
-            title: "Ввести",
+            title: CrosswordStr.GetWayAlert.doneActionTitle,
             style: .default) { [weak alert, self] (_) in
                 guard let textField = alert?.textFields?[0] else { return }
                 newText = textField.text ?? ""
                 self.updateTextLabel(of: label, with: newText)
             }
-        let cancelAction = UIAlertAction(title: "Надо еще подумац", style: .cancel)
+        let cancelAction = UIAlertAction(
+            title: CrosswordStr.GetWayAlert.cancelActionTitle,
+            style: .cancel)
         alert.addAction(doneAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
