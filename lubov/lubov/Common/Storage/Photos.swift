@@ -21,4 +21,5 @@ enum Photos {
     static let lubaShreck: String = "luba_shrek"
     static let lubaPlatok: String = "luba_v_platke"
     static let lubaGreen: String = "green_shapka"
+    static let lubaNuhaet: String = "luba_nuhaet"
 }

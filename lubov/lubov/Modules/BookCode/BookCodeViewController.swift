@@ -10,6 +10,7 @@ import SwiftConfettiView
 
 final class BookCodeViewController: UIViewController {
     typealias BookCodeStr = Strings.BookCode
+
     private enum K {
         static let horizontalInset: CGFloat = 16
         static let verticalInset: CGFloat = 16
@@ -110,6 +111,16 @@ final class BookCodeViewController: UIViewController {
         return view
     }()
     
+    private let lubaImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.image = UIImage(named: Photos.lubaNuhaet)
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.layer.cornerRadius = 10
+        return iv
+    }()
+    
     var presenter: BookCodePresenterProtocol?
     
     // MARK: - LifeCycle
@@ -146,6 +157,9 @@ private extension BookCodeViewController {
         // Description
         view.addSubview(descriptionInsetView)
         descriptionInsetView.addSubview(descriptionLabel)
+        
+        // Imageview
+        view.addSubview(lubaImageView)
         
         // Confetti
         view.addSubview(confettiView)
@@ -199,12 +213,21 @@ private extension BookCodeViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: descriptionInsetView.trailingAnchor, constant: -K.horizontalInset),
             descriptionLabel.bottomAnchor.constraint(equalTo: descriptionInsetView.bottomAnchor, constant: -K.verticalInset),
             
+            // lubaImageView
+            lubaImageView.topAnchor.constraint(equalTo: descriptionInsetView.bottomAnchor, constant: K.verticalInset),
+            lubaImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: K.horizontalInset),
+            lubaImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -K.horizontalInset),
+            lubaImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -K.verticalInset),
+            
             // confetti
             confettiView.topAnchor.constraint(equalTo: view.topAnchor),
             confettiView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             confettiView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             confettiView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
+        
+        quoteStackView.setContentCompressionResistancePriority(.required, for: .vertical)
+        lubaImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
     
     func addGesture() {
