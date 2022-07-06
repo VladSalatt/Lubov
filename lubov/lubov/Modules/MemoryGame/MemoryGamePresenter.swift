@@ -8,7 +8,9 @@
 import UIKit
 import CoreData
 
-protocol MemoryGameViewProtocol: AnyObject {}
+protocol MemoryGameViewProtocol: AnyObject {
+    func successActions()
+}
 
 protocol MemoryGamePresenterProtocol {
     init(
@@ -16,6 +18,8 @@ protocol MemoryGamePresenterProtocol {
         router: MemoryGameRouterProtocol,
         memoryGameLogic: MemoryGameLogic
     )
+    func saveTask(at screen: Screens)
+    func fetchTask(at screen: Screens) -> Task?
 }
 
 final class MemoryGamePresenter: NSObject, MemoryGamePresenterProtocol {
@@ -80,7 +84,7 @@ extension MemoryGamePresenter: UICollectionViewDelegate {
         // Flip or remove cell if needed
         flipOrRemoveCell(cell, collectionView, result)
         
-        if memoryGameLogic.allMatched() { print("🔴SUCESSSS") }
+        if memoryGameLogic.allMatched() { view?.successActions() }
     }
 }
 
@@ -132,6 +136,17 @@ extension MemoryGamePresenter {
         let managedObject = fetchResult[index]
         managedObject.setValue(true, forKey: CDKeys.isCompleted)
         save(context)
+    }
+    
+    func fetchTask(at screen: Screens) -> Task? {
+        guard
+            let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        else { return nil }
+
+        let fetchResult = fetch(context)
+        let index = Screens.allCases.firstIndex(of: screen) ?? 0 as Int
+        let managedObject = fetchResult[index]
+        return managedObject
     }
 }
 

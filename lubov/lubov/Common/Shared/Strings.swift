@@ -29,6 +29,7 @@ enum Strings {
         }
     }
     
+    /// Третье задание
     enum Crossword {
         static let cellTitle: String = "Кроссворд"
         static let toastySound: String = "toastySound"
@@ -47,6 +48,21 @@ enum Strings {
             static let message: String = "Этот "
             static let doneActionTitle: String = "Ввести"
             static let cancelActionTitle: String = "Надо еще подумац"
+        }
+    }
+    
+    /// Четвертое задание, memoryGame
+    enum MemoryGame {
+        static let cellTitle: String = "MemoryGame"
+        static let buttonTitle: String = "ВБРОД"
+        enum SimpleAlert {
+            static let title: String = "Описание 4"
+            static let message: String = "Описание 4"
+        }
+        enum QuestionAlert {
+            static let title: String = "Задание 4"
+            static let message: String = "Задание 4"
+            static let correctAnswer: String = "test"
         }
     }
 }

@@ -18,10 +18,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     private enum Constants {
         static let horizontalInset: CGFloat = 16
         static let verticalInset: CGFloat = 16
-        static let lubaImage: String = "luba"
-        static let imageOne: String = "inGlasses"
-        static let imageTwo: String = "drink"
-        static let imageThree: String = "coding"
+
     }
     // MARK: - Properties
     
@@ -31,14 +28,14 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     
     private let lubaImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Constants.lubaImage)
+        imageView.image = UIImage(named: Photos.lubaImage)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let firstImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Constants.imageOne)
+        imageView.image = UIImage(named: Photos.imageOne)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +44,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     
     private let secondImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Constants.imageTwo)
+        imageView.image = UIImage(named: Photos.imageTwo)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         imageView.isUserInteractionEnabled = true
@@ -57,7 +54,7 @@ final class CrosswordVC: UIViewController, CrosswordViewInput {
     
     private let thirdImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: Constants.imageThree)
+        imageView.image = UIImage(named: Photos.imageThree)
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false

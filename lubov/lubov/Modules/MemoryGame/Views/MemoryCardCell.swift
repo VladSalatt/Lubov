@@ -44,7 +44,7 @@ class MemoryCardCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = 5
+        layer.cornerRadius = 10
     }
     
     func configure(with model: Model) {
