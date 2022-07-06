@@ -80,28 +80,6 @@ final class BookCodeViewController: UIViewController {
         return label
     }()
     
-    private let descriptionInsetView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 10
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowOffset = .init(width: 3, height: 4)
-        view.layer.shadowColor = UIColor.landColor.cgColor
-        view.backgroundColor = .landColor
-        return view
-    }()
-    
-    /// Сюда положу текст из книги, чтобы понятнее было
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkBlueColor
-        label.font = .systemFont(ofSize: 24)
-        label.text = BookCodeStr.Main.description
-        label.numberOfLines = 0
-        return label
-    }()
-    
     private lazy var confettiView: SwiftConfettiView = {
         let view = SwiftConfettiView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -154,10 +132,6 @@ private extension BookCodeViewController {
         view.addSubview(codeInsetView)
         codeInsetView.addSubview(codeLabel)
         
-        // Description
-        view.addSubview(descriptionInsetView)
-        descriptionInsetView.addSubview(descriptionLabel)
-        
         // Imageview
         view.addSubview(lubaImageView)
         
@@ -202,19 +176,8 @@ private extension BookCodeViewController {
             codeLabel.trailingAnchor.constraint(equalTo: codeInsetView.trailingAnchor, constant: -K.horizontalInset),
             codeLabel.bottomAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: -K.verticalInset),
             
-            // descriptionInsetView
-            descriptionInsetView.topAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: K.verticalInset),
-            descriptionInsetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.horizontalInset),
-            descriptionInsetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -K.horizontalInset),
-            
-            // descriptionLabel
-            descriptionLabel.topAnchor.constraint(equalTo: descriptionInsetView.topAnchor, constant: K.verticalInset),
-            descriptionLabel.leadingAnchor.constraint(equalTo: descriptionInsetView.leadingAnchor, constant: K.horizontalInset),
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionInsetView.trailingAnchor, constant: -K.horizontalInset),
-            descriptionLabel.bottomAnchor.constraint(equalTo: descriptionInsetView.bottomAnchor, constant: -K.verticalInset),
-            
             // lubaImageView
-            lubaImageView.topAnchor.constraint(equalTo: descriptionInsetView.bottomAnchor, constant: K.verticalInset),
+            lubaImageView.topAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: K.verticalInset),
             lubaImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: K.horizontalInset),
             lubaImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -K.horizontalInset),
             lubaImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -K.verticalInset),

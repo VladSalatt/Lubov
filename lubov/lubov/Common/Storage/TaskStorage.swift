@@ -27,11 +27,12 @@ extension UserDefaults: UserDefaultsStorage {
 }
 
 struct TaskStorage {
+    // TODO: Переименовать
     static let names: [String] = [
-        "Узнаешь его по квадратности xD",
-        "Парфюмер",
-        "Кроссворд",
-        "4",
+        "Имя им - КВАДРАТНОСТЬ",
+        "Нюхач",
+        "Путь самурая",
+        "Son",
         "5"
     ]
 }
