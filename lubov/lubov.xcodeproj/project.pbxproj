@@ -42,6 +42,8 @@
 		EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A251E285F6863001BA96C /* UIColor+Ext.swift */; };
 		EA567C9B28760E760034EB42 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA567C9A28760E760034EB42 /* Photos.swift */; };
 		EA567C9D28760EAC0034EB42 /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA567C9C28760EAC0034EB42 /* CardStorage.swift */; };
+		EA714D0F28764309007A88A5 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = EA714D0E28764309007A88A5 /* UIOnboarding */; };
+		EA714D1228764575007A88A5 /* UIOnboardingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA714D1128764575007A88A5 /* UIOnboardingHelper.swift */; };
 		EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F3FE2845444100179D6E /* AppDelegate.swift */; };
 		EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F4002845444100179D6E /* SceneDelegate.swift */; };
 		EA99F4082845444200179D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA99F4072845444200179D6E /* Assets.xcassets */; };
@@ -99,6 +101,7 @@
 		EA4A251E285F6863001BA96C /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		EA567C9A28760E760034EB42 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		EA567C9C28760EAC0034EB42 /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
+		EA714D1128764575007A88A5 /* UIOnboardingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOnboardingHelper.swift; sourceTree = "<group>"; };
 		EA99F3FB2845444100179D6E /* lubov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lubov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99F3FE2845444100179D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA99F4002845444100179D6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C49693B6EA488559F7C92BD /* Pods_lubov.framework in Frameworks */,
+				EA714D0F28764309007A88A5 /* UIOnboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 		C52E4BC428468B6A00DE44E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EA714D1028764564007A88A5 /* UIOnboarding */,
 				C54516DC287262EA00619CD1 /* Crossword */,
 				EA24459B2873A18700074EAE /* MemoryGame */,
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
@@ -333,6 +338,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		EA714D1028764564007A88A5 /* UIOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EA714D1128764575007A88A5 /* UIOnboardingHelper.swift */,
+			);
+			path = UIOnboarding;
+			sourceTree = "<group>";
+		};
 		EA99F3F22845444100179D6E = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +451,9 @@
 			dependencies = (
 			);
 			name = lubov;
+			packageProductDependencies = (
+				EA714D0E28764309007A88A5 /* UIOnboarding */,
+			);
 			productName = lubov;
 			productReference = EA99F3FB2845444100179D6E /* lubov.app */;
 			productType = "com.apple.product-type.application";
@@ -466,6 +482,9 @@
 				Base,
 			);
 			mainGroup = EA99F3F22845444100179D6E;
+			packageReferences = (
+				EA714D0D28764309007A88A5 /* XCRemoteSwiftPackageReference "UIOnboarding" */,
+			);
 			productRefGroup = EA99F3FC2845444100179D6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -571,6 +590,7 @@
 				C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */,
 				EA567C9B28760E760034EB42 /* Photos.swift in Sources */,
 				C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */,
+				EA714D1228764575007A88A5 /* UIOnboardingHelper.swift in Sources */,
 				C54516E22872647A00619CD1 /* CrosswordRouter.swift in Sources */,
 				C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */,
 				EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */,
@@ -796,6 +816,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA714D0D28764309007A88A5 /* XCRemoteSwiftPackageReference "UIOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lascic/UIOnboarding.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA714D0E28764309007A88A5 /* UIOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA714D0D28764309007A88A5 /* XCRemoteSwiftPackageReference "UIOnboarding" */;
+			productName = UIOnboarding;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EA3152BA286BBC27008C7829 /* Task.xcdatamodeld */ = {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIOnboarding
 
 final class TasksCVC: UICollectionViewController {
     
@@ -30,6 +31,7 @@ final class TasksCVC: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentOnboarding()
         setupCollectionFlowLayout()
         setupCollectionView()
         setupUI()
@@ -64,9 +66,21 @@ private extension TasksCVC {
     func setupUI() {
         self.collectionView.backgroundColor = .darkBlueColor
     }
+    
+    func presentOnboarding() {
+        let onboardingController: UIOnboardingViewController = .init(withConfiguration: .setUp())
+        onboardingController.delegate = self
+        navigationController?.present(onboardingController, animated: false)
+    }
 }
 
-
+extension TasksCVC: UIOnboardingViewControllerDelegate {
+    func didFinishOnboarding(onboardingViewController: UIOnboardingViewController) {
+        // TODO: Если первый раз открывает
+        onboardingViewController.modalTransitionStyle = .crossDissolve
+        onboardingViewController.dismiss(animated: true)
+    }
+}
 
 // MARK: - TasksViewInput
 
