@@ -31,11 +31,9 @@ final class TasksRouter: TasksRouterProtocol {
             viewController = BookCodeConfigurator.configure()
         case .crossword:
             viewController = CrosswordConfigurator.configure()
-        case .fourth:
-            viewController = UIViewController()
+        case .memoryGame:
+            viewController = MemoryGameConfigurator.configure()
         case .fifth:
-            viewController = UIViewController()
-        case .sixth:
             viewController = UIViewController()
         }
         navigationController.pushViewController(viewController, animated: true)

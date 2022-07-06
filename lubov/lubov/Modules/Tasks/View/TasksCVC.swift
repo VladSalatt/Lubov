@@ -7,7 +7,6 @@
 
 import UIKit
 
-// TODO: 3) Занести цветовую палитру
 final class TasksCVC: UICollectionViewController {
     
     // MARK: - Constants

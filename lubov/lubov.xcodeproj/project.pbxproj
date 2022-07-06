@@ -25,16 +25,23 @@
 		C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC72868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift */; };
 		C55AEACA2868B80500EB0FFF /* KnownBySquareViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEAC92868B80500EB0FFF /* KnownBySquareViewOutput.swift */; };
 		C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55AEACB2868B80D00EB0FFF /* KnownBySquareViewInput.swift */; };
-		C55C8D3C28744EA200B57663 /* toastySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C55C8D3B28744EA200B57663 /* toastySound.mp3 */; };
 		C56A0D7A286E2725008AA729 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A0D79286E2725008AA729 /* UINavigationController+Ext.swift */; };
 		C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADA285147EF00A6723F /* TasksCellCollectionViewCell.swift */; };
 		C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADC285148A700A6723F /* TasksRouter.swift */; };
 		C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */; };
+		EA2445A22873A19A00074EAE /* MemoryGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */; };
+		EA2445A32873A19A00074EAE /* MemoryGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */; };
+		EA2445A42873A19A00074EAE /* MemoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */; };
+		EA2445A62873A19A00074EAE /* MemoryGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */; };
+		EA2445A72873A19A00074EAE /* MemoryGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */; };
+		EA2445AA2873A7B600074EAE /* MemoryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2445A92873A7B600074EAE /* MemoryCardCell.swift */; };
 		EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BA286BBC27008C7829 /* Task.xcdatamodeld */; };
-		EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BF286BC9E8008C7829 /* Storage.swift */; };
+		EA3152C0286BC9E8008C7829 /* TaskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152BF286BC9E8008C7829 /* TaskStorage.swift */; };
 		EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152C1286BD862008C7829 /* UILabel+Ext.swift */; };
 		EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3152C3286BDF3E008C7829 /* Tasks+CoreData.swift */; };
 		EA4A251F285F6863001BA96C /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A251E285F6863001BA96C /* UIColor+Ext.swift */; };
+		EA567C9B28760E760034EB42 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA567C9A28760E760034EB42 /* Photos.swift */; };
+		EA567C9D28760EAC0034EB42 /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA567C9C28760EAC0034EB42 /* CardStorage.swift */; };
 		EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F3FE2845444100179D6E /* AppDelegate.swift */; };
 		EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F4002845444100179D6E /* SceneDelegate.swift */; };
 		EA99F4082845444200179D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA99F4072845444200179D6E /* Assets.xcassets */; };
@@ -42,6 +49,9 @@
 		EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */; };
 		EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */; };
 		EACD35F228687AE300D94F0F /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD35F128687AE300D94F0F /* Screens.swift */; };
+		EAD8014C28747A07001AF563 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD8014B28747A07001AF563 /* Card.swift */; };
+		EAD8014F28748F0E001AF563 /* MemoryGameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */; };
+		EAD801512874A5C5001AF563 /* toastySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAD801502874A5C5001AF563 /* toastySound.mp3 */; };
 		EAE545E028720E25009AEC10 /* BookCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */; };
 		EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */; };
 		EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */; };
@@ -70,18 +80,25 @@
 		C55AEAC72868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareRouterProtocol.swift; sourceTree = "<group>"; };
 		C55AEAC92868B80500EB0FFF /* KnownBySquareViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareViewOutput.swift; sourceTree = "<group>"; };
 		C55AEACB2868B80D00EB0FFF /* KnownBySquareViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownBySquareViewInput.swift; sourceTree = "<group>"; };
-		C55C8D3B28744EA200B57663 /* toastySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = toastySound.mp3; path = ../../../../../Documents/toastySound.mp3; sourceTree = "<group>"; };
 		C56A0D79286E2725008AA729 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		C5A30ADA285147EF00A6723F /* TasksCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5A30ADC285148A700A6723F /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
 		C5A30ADE2851491800A6723F /* TasksRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouterProtocol.swift; sourceTree = "<group>"; };
 		D3A1E880F4E0501C0D18BA99 /* Pods-lubov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lubov.release.xcconfig"; path = "Target Support Files/Pods-lubov/Pods-lubov.release.xcconfig"; sourceTree = "<group>"; };
 		DD11D2CF13DEF9B21E6FE71B /* Pods_lubov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lubov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGamePresenter.swift; sourceTree = "<group>"; };
+		EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameRouter.swift; sourceTree = "<group>"; };
+		EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewController.swift; sourceTree = "<group>"; };
+		EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameConfigurator.swift; sourceTree = "<group>"; };
+		EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameLogic.swift; sourceTree = "<group>"; };
+		EA2445A92873A7B600074EAE /* MemoryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardCell.swift; sourceTree = "<group>"; };
 		EA3152BB286BBC27008C7829 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
-		EA3152BF286BC9E8008C7829 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		EA3152BF286BC9E8008C7829 /* TaskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStorage.swift; sourceTree = "<group>"; };
 		EA3152C1286BD862008C7829 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		EA3152C3286BDF3E008C7829 /* Tasks+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreData.swift"; sourceTree = "<group>"; };
 		EA4A251E285F6863001BA96C /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		EA567C9A28760E760034EB42 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		EA567C9C28760EAC0034EB42 /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
 		EA99F3FB2845444100179D6E /* lubov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lubov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99F3FE2845444100179D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA99F4002845444100179D6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +108,9 @@
 		EAAF36E9286E6E3200AB7402 /* SimpleAlertview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertview.swift; sourceTree = "<group>"; };
 		EAC6FCB82857CDBA00677A85 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		EACD35F128687AE300D94F0F /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
+		EAD8014B28747A07001AF563 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameResult.swift; sourceTree = "<group>"; };
+		EAD801502874A5C5001AF563 /* toastySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toastySound.mp3; sourceTree = "<group>"; };
 		EAE545DA28720E25009AEC10 /* BookCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodePresenter.swift; sourceTree = "<group>"; };
 		EAE545DB28720E25009AEC10 /* BookCodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeRouter.swift; sourceTree = "<group>"; };
 		EAE545DC28720E25009AEC10 /* BookCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCodeViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C54516DC287262EA00619CD1 /* Crossword */,
+				EA24459B2873A18700074EAE /* MemoryGame */,
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
 				EAE545E628720E31009AEC10 /* BookCode */,
@@ -144,7 +165,6 @@
 		C52E4BC528468B8A00DE44E3 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				EA3152BE286BC9A4008C7829 /* Storage */,
 				EA1E675C28679198004BF704 /* Model */,
 				C52E4BC928468BE600DE44E3 /* Configurator */,
 				C52E4BC828468BDD00DE44E3 /* Router */,
@@ -194,11 +214,11 @@
 		C54516DC287262EA00619CD1 /* Crossword */ = {
 			isa = PBXGroup;
 			children = (
-				C55C8D3B28744EA200B57663 /* toastySound.mp3 */,
 				C54516DD2872631A00619CD1 /* CrosswordConfigurator.swift */,
 				C54516DF287263A900619CD1 /* CrosswordPresenter.swift */,
 				C54516E12872647A00619CD1 /* CrosswordRouter.swift */,
 				C54516E3287264EA00619CD1 /* CrosswordVC.swift */,
+				EAD801502874A5C5001AF563 /* toastySound.mp3 */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -282,10 +302,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EA24459B2873A18700074EAE /* MemoryGame */ = {
+			isa = PBXGroup;
+			children = (
+				EA2445A82873A78200074EAE /* Views */,
+				EA24459C2873A19A00074EAE /* MemoryGamePresenter.swift */,
+				EA24459D2873A19A00074EAE /* MemoryGameRouter.swift */,
+				EA2445A02873A19A00074EAE /* MemoryGameConfigurator.swift */,
+				EAD8014D28747A10001AF563 /* Models */,
+			);
+			path = MemoryGame;
+			sourceTree = "<group>";
+		};
+		EA2445A82873A78200074EAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA24459E2873A19A00074EAE /* MemoryGameViewController.swift */,
+				EA2445A92873A7B600074EAE /* MemoryCardCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EA3152BE286BC9A4008C7829 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				EA3152BF286BC9E8008C7829 /* Storage.swift */,
+				EA3152BF286BC9E8008C7829 /* TaskStorage.swift */,
+				EA567C9A28760E760034EB42 /* Photos.swift */,
+				EA567C9C28760EAC0034EB42 /* CardStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -326,11 +369,22 @@
 		EAC6FCB72857CD9300677A85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EA3152BE286BC9A4008C7829 /* Storage */,
 				C54A13A42872D9C2003FFC93 /* Shared */,
 				EAEB293A286E3E3A003A8BBC /* Controls */,
 				EAEB293D286E5024003A8BBC /* Extensions */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		EAD8014D28747A10001AF563 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA2445A12873A19A00074EAE /* MemoryGameLogic.swift */,
+				EAD8014E28748F0E001AF563 /* MemoryGameResult.swift */,
+				EAD8014B28747A07001AF563 /* Card.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EAE545E628720E31009AEC10 /* BookCode */ = {
@@ -426,7 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C55C8D3C28744EA200B57663 /* toastySound.mp3 in Resources */,
+				EAD801512874A5C5001AF563 /* toastySound.mp3 in Resources */,
 				EA99F40B2845444200179D6E /* LaunchScreen.storyboard in Resources */,
 				EA99F4082845444200179D6E /* Assets.xcassets in Resources */,
 			);
@@ -490,23 +544,32 @@
 				C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */,
 				C54A13A62872D9C9003FFC93 /* Strings.swift in Sources */,
 				EA3152C4286BDF3E008C7829 /* Tasks+CoreData.swift in Sources */,
+				EAD8014F28748F0E001AF563 /* MemoryGameResult.swift in Sources */,
 				C52E4BCD28468F3300DE44E3 /* TasksViewInput.swift in Sources */,
 				EAAF36EA286E6E3200AB7402 /* SimpleAlertview.swift in Sources */,
 				EAEB293F286E5036003A8BBC /* Errors.swift in Sources */,
 				C55AEAC6286893FB00EB0FFF /* KnownBySquareConfigurator.swift in Sources */,
+				EA2445A62873A19A00074EAE /* MemoryGameConfigurator.swift in Sources */,
 				C52E4BD3284690F300DE44E3 /* TasksConfigurator.swift in Sources */,
 				EAC6FCB92857CDBA00677A85 /* Int+Ext.swift in Sources */,
+				EA2445A32873A19A00074EAE /* MemoryGameRouter.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
+				EA2445A22873A19A00074EAE /* MemoryGamePresenter.swift in Sources */,
 				C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */,
+				EA2445AA2873A7B600074EAE /* MemoryCardCell.swift in Sources */,
 				C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */,
 				C52E4BD12846903800DE44E3 /* TasksViewOutput.swift in Sources */,
+				EA2445A42873A19A00074EAE /* MemoryGameViewController.swift in Sources */,
+				EA2445A72873A19A00074EAE /* MemoryGameLogic.swift in Sources */,
 				C52E4BCF28468FCB00DE44E3 /* TasksPresenter.swift in Sources */,
 				EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */,
 				C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */,
 				C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */,
 				EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */,
+				EAD8014C28747A07001AF563 /* Card.swift in Sources */,
 				EAE545E428720E25009AEC10 /* BookCodeConfigurator.swift in Sources */,
 				C54516E0287263A900619CD1 /* CrosswordPresenter.swift in Sources */,
+				EA567C9B28760E760034EB42 /* Photos.swift in Sources */,
 				C55AEAC82868B77C00EB0FFF /* KnownBySquareRouterProtocol.swift in Sources */,
 				C54516E22872647A00619CD1 /* CrosswordRouter.swift in Sources */,
 				C5A30ADD285148A700A6723F /* TasksRouter.swift in Sources */,
@@ -515,9 +578,10 @@
 				EAE545E028720E25009AEC10 /* BookCodePresenter.swift in Sources */,
 				EAEB293C286E3E4F003A8BBC /* AlertView.swift in Sources */,
 				C55AEACA2868B80500EB0FFF /* KnownBySquareViewOutput.swift in Sources */,
+				EA567C9D28760EAC0034EB42 /* CardStorage.swift in Sources */,
 				EAE545E228720E25009AEC10 /* BookCodeViewController.swift in Sources */,
 				EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */,
-				EA3152C0286BC9E8008C7829 /* Storage.swift in Sources */,
+				EA3152C0286BC9E8008C7829 /* TaskStorage.swift in Sources */,
 				C52E4BCB28468E9F00DE44E3 /* TasksCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

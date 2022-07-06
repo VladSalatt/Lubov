@@ -7,6 +7,8 @@
 
 import Foundation
 
+// TODO: Переместить в shared
+// TODO: Добавить 8 картинок в CardStorage
 protocol UserDefaultsStorage {
     var isSecondOpen: Bool { get set }
 }
@@ -33,3 +35,4 @@ struct TaskStorage {
         "5"
     ]
 }
+
