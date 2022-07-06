@@ -9,6 +9,20 @@ import Foundation
 
 /// Тут будут все текста для заданий, в том числе и правильные ответы
 enum Strings {
+    /// Первое задание
+    enum KnownBySquare {
+        static let cellTitle: String = "Узнаешь его по квадратности :-D"
+        enum SimpleAlert {
+            static let title: String = "Описание 1"
+            static let message: String = "Описание 1"
+        }
+        enum QuestionAlert {
+            static let title: String = "Задание 1"
+            static let message: String = "Задание 1"
+            static let correctAnswer: String = "test"
+        }
+    }
+    
     /// Второе задание, с кодом из книги
     enum BookCode {
         static let cellTitle: String = "Парфюмер"

@@ -10,6 +10,7 @@ import CoreMotion
 import SwiftConfettiView
 
 final class KnownBySquareVC: UIViewController, KnownBySquareViewInput {
+    typealias KnownStr = Strings.KnownBySquare
     
     // MARK: - Properties
 
@@ -101,7 +102,7 @@ private extension KnownBySquareVC {
     }
     
     func setupNavBar() {
-        title = "Узнаешь его по квадратности :-D"
+        title = KnownStr.cellTitle
         navigationController?.setTitle(with: .sandColor)
         navigationItem.rightBarButtonItem = .init(
             barButtonSystemItem: .bookmarks,
@@ -212,17 +213,17 @@ extension KnownBySquareVC {
 private extension KnownBySquareVC {
     @objc func showSimpleAlert() {
         let alertVC = SimpleAlertview(
-            title: "Задание",
-            message: "Описание задания"
+            title: KnownStr.SimpleAlert.title,
+            message: KnownStr.SimpleAlert.message
         )
         present(alertVC, animated: true)
     }
     
     func showQuestionAlert() {
         let alertVC = AlertView(
-            title: "test",
-            message: "test",
-            correctAnswer: "test",
+            title: KnownStr.QuestionAlert.title,
+            message: KnownStr.QuestionAlert.message,
+            correctAnswer: KnownStr.QuestionAlert.correctAnswer,
             checkAction: { [weak self] result in
                 guard let self = self else { return }
                 switch result {
