@@ -12,5 +12,5 @@ enum Screens: CaseIterable {
     case bookCode
     case crossword
     case memoryGame
-    case fifth
+    case solomonTreasure
 }

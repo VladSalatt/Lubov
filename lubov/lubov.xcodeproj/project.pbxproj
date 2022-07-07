@@ -44,6 +44,11 @@
 		EA567C9D28760EAC0034EB42 /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA567C9C28760EAC0034EB42 /* CardStorage.swift */; };
 		EA714D0F28764309007A88A5 /* UIOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = EA714D0E28764309007A88A5 /* UIOnboarding */; };
 		EA714D1228764575007A88A5 /* UIOnboardingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA714D1128764575007A88A5 /* UIOnboardingHelper.swift */; };
+		EA94F07A287707EA00B96A01 /* SolomonTreasurePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA94F074287707EA00B96A01 /* SolomonTreasurePresenter.swift */; };
+		EA94F07B287707EA00B96A01 /* SolomonTreasureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA94F075287707EA00B96A01 /* SolomonTreasureRouter.swift */; };
+		EA94F07C287707EA00B96A01 /* SolomonTreasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA94F076287707EA00B96A01 /* SolomonTreasureViewController.swift */; };
+		EA94F07E287707EA00B96A01 /* SolomonTreasureConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA94F078287707EA00B96A01 /* SolomonTreasureConfigurator.swift */; };
+		EA94F0822877204000B96A01 /* s-dnem-birthday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA94F0812877204000B96A01 /* s-dnem-birthday.mp3 */; };
 		EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F3FE2845444100179D6E /* AppDelegate.swift */; };
 		EA99F4012845444100179D6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99F4002845444100179D6E /* SceneDelegate.swift */; };
 		EA99F4082845444200179D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA99F4072845444200179D6E /* Assets.xcassets */; };
@@ -102,6 +107,11 @@
 		EA567C9A28760E760034EB42 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		EA567C9C28760EAC0034EB42 /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
 		EA714D1128764575007A88A5 /* UIOnboardingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOnboardingHelper.swift; sourceTree = "<group>"; };
+		EA94F074287707EA00B96A01 /* SolomonTreasurePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolomonTreasurePresenter.swift; sourceTree = "<group>"; };
+		EA94F075287707EA00B96A01 /* SolomonTreasureRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolomonTreasureRouter.swift; sourceTree = "<group>"; };
+		EA94F076287707EA00B96A01 /* SolomonTreasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolomonTreasureViewController.swift; sourceTree = "<group>"; };
+		EA94F078287707EA00B96A01 /* SolomonTreasureConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolomonTreasureConfigurator.swift; sourceTree = "<group>"; };
+		EA94F0812877204000B96A01 /* s-dnem-birthday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "s-dnem-birthday.mp3"; sourceTree = "<group>"; };
 		EA99F3FB2845444100179D6E /* lubov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lubov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99F3FE2845444100179D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA99F4002845444100179D6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +173,7 @@
 				C55AEAB92868937900EB0FFF /* KnownBySquare */,
 				C52E4BC528468B8A00DE44E3 /* Tasks */,
 				EAE545E628720E31009AEC10 /* BookCode */,
+				EA94F08028770AC000B96A01 /* SolomonTreasure */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -346,6 +357,18 @@
 			path = UIOnboarding;
 			sourceTree = "<group>";
 		};
+		EA94F08028770AC000B96A01 /* SolomonTreasure */ = {
+			isa = PBXGroup;
+			children = (
+				EA94F0812877204000B96A01 /* s-dnem-birthday.mp3 */,
+				EA94F074287707EA00B96A01 /* SolomonTreasurePresenter.swift */,
+				EA94F075287707EA00B96A01 /* SolomonTreasureRouter.swift */,
+				EA94F076287707EA00B96A01 /* SolomonTreasureViewController.swift */,
+				EA94F078287707EA00B96A01 /* SolomonTreasureConfigurator.swift */,
+			);
+			path = SolomonTreasure;
+			sourceTree = "<group>";
+		};
 		EA99F3F22845444100179D6E = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD801512874A5C5001AF563 /* toastySound.mp3 in Resources */,
+				EA94F0822877204000B96A01 /* s-dnem-birthday.mp3 in Resources */,
 				EA99F40B2845444200179D6E /* LaunchScreen.storyboard in Resources */,
 				EA99F4082845444200179D6E /* Assets.xcassets in Resources */,
 			);
@@ -559,6 +583,7 @@
 				C5A30ADB285147EF00A6723F /* TasksCellCollectionViewCell.swift in Sources */,
 				EA99F3FF2845444100179D6E /* AppDelegate.swift in Sources */,
 				EA3152C2286BD862008C7829 /* UILabel+Ext.swift in Sources */,
+				EA94F07A287707EA00B96A01 /* SolomonTreasurePresenter.swift in Sources */,
 				C5A30ADF2851491800A6723F /* TasksRouterProtocol.swift in Sources */,
 				C54516E4287264EA00619CD1 /* CrosswordVC.swift in Sources */,
 				C54A13A62872D9C9003FFC93 /* Strings.swift in Sources */,
@@ -574,6 +599,7 @@
 				EA2445A32873A19A00074EAE /* MemoryGameRouter.swift in Sources */,
 				EACD35F228687AE300D94F0F /* Screens.swift in Sources */,
 				EA2445A22873A19A00074EAE /* MemoryGamePresenter.swift in Sources */,
+				EA94F07E287707EA00B96A01 /* SolomonTreasureConfigurator.swift in Sources */,
 				C55AEAC0286893DA00EB0FFF /* KnownBySquareVC.swift in Sources */,
 				EA2445AA2873A7B600074EAE /* MemoryCardCell.swift in Sources */,
 				C55AEAC2286893E500EB0FFF /* KnownBySquarePresenter.swift in Sources */,
@@ -581,8 +607,10 @@
 				EA2445A42873A19A00074EAE /* MemoryGameViewController.swift in Sources */,
 				EA2445A72873A19A00074EAE /* MemoryGameLogic.swift in Sources */,
 				C52E4BCF28468FCB00DE44E3 /* TasksPresenter.swift in Sources */,
+				EA94F07B287707EA00B96A01 /* SolomonTreasureRouter.swift in Sources */,
 				EA3152BC286BBC27008C7829 /* Task.xcdatamodeld in Sources */,
 				C55AEACC2868B80D00EB0FFF /* KnownBySquareViewInput.swift in Sources */,
+				EA94F07C287707EA00B96A01 /* SolomonTreasureViewController.swift in Sources */,
 				C55AEAC4286893F000EB0FFF /* KnownBySquareRouter.swift in Sources */,
 				EAE545E128720E25009AEC10 /* BookCodeRouter.swift in Sources */,
 				EAD8014C28747A07001AF563 /* Card.swift in Sources */,

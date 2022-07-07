@@ -17,9 +17,8 @@ enum Strings {
             static let message: String = "Ходят слухи, что в Александрийской библиотеке нашли мемуары одного Римского императора - Тиберия. Он стал известен тем, что смотрел на все вещи с различных сторон. Изучив рукописи, можно наткнутся на интересную фразу, которую говорил Тиберий во время приема пищи"
         }
         enum QuestionAlert {
-            // Тиберий Клавдий Цезарь говорит “lxxt>33m2mqkyv2gsq3q=w]O2ntk”
             static let title: String = "Тиберий Клавдий Цезарь IV говорил: "
-            static let message: String = "ммм супчик"
+            static let message: String = "ррр хчуымо"
             static let correctAnswer: String = "ммм супчик"
         }
     }
@@ -28,19 +27,18 @@ enum Strings {
     enum BookCode {
         static let cellTitle: String = "Нюхач"
         enum Main {
-            static let quote: String = "Тут будут очень длинный тест с цитатами и тп"
-            static let author: String = "М.О Бальзак"
-            static let code: String = "123 345 482 442 9"
-            static let description: String = "Тыры пыры тым тым тым. Может сюда вырезку из Парфюмера вставить"
+            static let quote: String = "Нет такой человеческой фантазии, которую бы реальность не превзошла играючи."
+            static let author: String = "- Патрик Зюскинд"
+            static let code: String = "516 8148 11102 5181 7106 971 7"
         }
         enum SimpleAlert {
-            static let title: String = "Описание 2"
-            static let message: String = "Описание 2"
+            static let title: String = "Единственная истина"
+            static let message: String = "В аромате есть убедительность, которая сильнее слов, очевидности, чувства и воли. Убедительность аромата неопровержима, необорима, она входит в нас подобно тому, как входит в наши лёгкие воздух, которым мы дышим, она наполняет, заполняет нас до отказа. Против неё нет средства."
         }
         enum QuestionAlert {
-            static let title: String = "Задание 2"
-            static let message: String = "Задание 2"
-            static let correctAnswer: String = "test"
+            static let title: String = "Рад что ты поняла, как меня найти :)"
+            static let message: String = "Теперь желанное тобой на первом месте. Ой, на нулевом"
+            static let correctAnswer: String = "аромат"
         }
     }
     
@@ -76,8 +74,19 @@ enum Strings {
         }
         enum QuestionAlert {
             static let title: String = "Так вот, теперь тебе надо представить себя не собой. Так кто ты?"
-            static let message: String = "Я КАРТА"
+            static let message: String = "Г ОДФЦД"
             static let correctAnswer: String = "Я КАРТА"
+        }
+    }
+    
+    enum SolomonTreasure {
+        static let cellTitle: String = "Сокровище царя Соломона"
+        static let buttonTitle: String = "Попробуй и ты!"
+        static let mainText: String = "\tВ Священном писании существует один библейский персонаж, который окутан целым шлейфом мифов и легенд. Его образ считается неотъемлемым для иудейской, христианской и исламской религий, а его мудрость и справедливость воспевались целыми поколениями литераторов и поэтов. Имя ему царь Соломон.\n\tПо библейским источникам он выступает в качестве мудрейшего из людей, справедливого судьи, умевшего найти оригинальное решение в самых необыкновенных ситуациях.\n\tНемногие знают, что царь собрал самые ценные богатсва этого мира и спрятал их в потаенной месте. Из-за этого в конце жизни его пытались поймать и казнить целых 7 раз. Говоря свои последние слова царь заискался, но все же признался, где их искать.\n\tЭнтузиасты всего мира того времени отправились на поиски сокровищ, но никто ничего не нашел...Получается Соломон всех обманул? Или нет?"
+        enum QuestionAlert {
+            static let title: String = "Последними словами Соломона были:"
+            static let message: String = "ннннннннннннннннннннннннннаааааааааааааааааааааа дддддддддддддддддддддддддннннннеееееееееее"
+            static let correctAnswer: String = "не ебу"
         }
     }
 }

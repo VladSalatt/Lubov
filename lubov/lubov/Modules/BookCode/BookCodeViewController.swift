@@ -74,7 +74,7 @@ final class BookCodeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkBlueColor
-        label.font = .boldSystemFont(ofSize: 24)
+        label.font = .boldSystemFont(ofSize: 23)
         label.text = BookCodeStr.Main.code
         label.numberOfLines = 0
         return label
@@ -122,15 +122,16 @@ final class BookCodeViewController: UIViewController {
 private extension BookCodeViewController {
     func setupUI() {
         view.backgroundColor = .darkBlueColor
+        
+        // Code
+        view.addSubview(codeInsetView)
+        codeInsetView.addSubview(codeLabel)
+        
         // Quote
         view.addSubview(quoteInsetView)
         quoteInsetView.addSubview(quoteStackView)
         quoteStackView.addArrangedSubview(quoteLabel)
         quoteStackView.addArrangedSubview(authorLabel)
-        
-        // Code
-        view.addSubview(codeInsetView)
-        codeInsetView.addSubview(codeLabel)
         
         // Imageview
         view.addSubview(lubaImageView)
@@ -154,19 +155,8 @@ private extension BookCodeViewController {
     
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            // quoteInsetView
-            quoteInsetView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: K.verticalInset),
-            quoteInsetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.horizontalInset),
-            quoteInsetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -K.horizontalInset),
-            
-            // quoteStackView
-            quoteStackView.topAnchor.constraint(equalTo: quoteInsetView.topAnchor, constant: K.verticalInset),
-            quoteStackView.bottomAnchor.constraint(equalTo: quoteInsetView.bottomAnchor, constant: -K.verticalInset),
-            quoteStackView.leadingAnchor.constraint(equalTo: quoteInsetView.leadingAnchor, constant: K.horizontalInset),
-            quoteStackView.trailingAnchor.constraint(equalTo: quoteInsetView.trailingAnchor, constant: -K.horizontalInset),
-            
             // codeInsetView
-            codeInsetView.topAnchor.constraint(equalTo: quoteInsetView.bottomAnchor, constant: K.verticalInset),
+            codeInsetView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: K.verticalInset),
             codeInsetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.horizontalInset),
             codeInsetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -K.horizontalInset),
             
@@ -176,8 +166,19 @@ private extension BookCodeViewController {
             codeLabel.trailingAnchor.constraint(equalTo: codeInsetView.trailingAnchor, constant: -K.horizontalInset),
             codeLabel.bottomAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: -K.verticalInset),
             
+            // quoteInsetView
+            quoteInsetView.topAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: K.verticalInset),
+            quoteInsetView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.horizontalInset),
+            quoteInsetView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -K.horizontalInset),
+            
+            // quoteStackView
+            quoteStackView.topAnchor.constraint(equalTo: quoteInsetView.topAnchor, constant: K.verticalInset),
+            quoteStackView.bottomAnchor.constraint(equalTo: quoteInsetView.bottomAnchor, constant: -K.verticalInset),
+            quoteStackView.leadingAnchor.constraint(equalTo: quoteInsetView.leadingAnchor, constant: K.horizontalInset),
+            quoteStackView.trailingAnchor.constraint(equalTo: quoteInsetView.trailingAnchor, constant: -K.horizontalInset),
+            
             // lubaImageView
-            lubaImageView.topAnchor.constraint(equalTo: codeInsetView.bottomAnchor, constant: K.verticalInset),
+            lubaImageView.topAnchor.constraint(equalTo: quoteInsetView.bottomAnchor, constant: K.verticalInset),
             lubaImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: K.horizontalInset),
             lubaImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -K.horizontalInset),
             lubaImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -K.verticalInset),

@@ -33,8 +33,8 @@ final class TasksRouter: TasksRouterProtocol {
             viewController = CrosswordConfigurator.configure()
         case .memoryGame:
             viewController = MemoryGameConfigurator.configure()
-        case .fifth:
-            viewController = UIViewController()
+        case .solomonTreasure:
+            viewController = SolomonTreasureConfigurator.configure()
         }
         navigationController.pushViewController(viewController, animated: true)
     }
