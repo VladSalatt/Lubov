@@ -26,6 +26,7 @@ final class TasksCVC: UICollectionViewController {
     // MARK: - Properties
     
     var presenter: TasksViewOutput?
+    var showOnboarding: Bool = false
     
     // MARK: - LifeCycle
     
@@ -68,6 +69,7 @@ private extension TasksCVC {
     }
     
     func presentOnboarding() {
+        guard showOnboarding else { return }
         let onboardingController: UIOnboardingViewController = .init(withConfiguration: .setUp())
         onboardingController.delegate = self
         navigationController?.present(onboardingController, animated: false)
@@ -76,7 +78,6 @@ private extension TasksCVC {
 
 extension TasksCVC: UIOnboardingViewControllerDelegate {
     func didFinishOnboarding(onboardingViewController: UIOnboardingViewController) {
-        // TODO: Если первый раз открывает
         onboardingViewController.modalTransitionStyle = .crossDissolve
         onboardingViewController.dismiss(animated: true)
     }
@@ -85,5 +86,8 @@ extension TasksCVC: UIOnboardingViewControllerDelegate {
 // MARK: - TasksViewInput
 
 extension TasksCVC: TasksViewInput {
-    
+    var isFirstOpen: Bool {
+        get { showOnboarding }
+        set { showOnboarding = newValue }
+    }
 }

@@ -10,7 +10,7 @@ import UIOnboarding
 
 struct UIOnboardingHelper {
     static func setUpIcon() -> UIImage {
-        Bundle.main.appIcon ?? .init(named: "onboarding-icon")!
+        .init(named: Photos.lubaBlack120)!
     }
     
     // First Title Line
@@ -22,46 +22,58 @@ struct UIOnboardingHelper {
     // Second Title Line
     // App Name
     static func setUpSecondTitleLine() -> NSMutableAttributedString {
-        .init(string: Bundle.main.displayName ?? "Insignia", attributes: [
-            .foregroundColor: UIColor.init(named: "camou") ?? UIColor.init(red: 0.654, green: 0.618, blue: 0.494, alpha: 1.0)
-        ])
+        .init(
+            string: "Verbovka",
+            attributes: [ .foregroundColor: UIColor.successTaskColor ]
+        )
     }
     
     static func setUpFeatures() -> Array<UIOnboardingFeature> {
         .init([
-            .init(icon: .init(named: "feature-1")!,
-                  title: "Search until found",
-                  description: "Over a hundred insignia of the Swiss Armed Forces – each redesigned from the ground up."),
-            .init(icon: .init(named: "feature-2")!,
-                  title: "Enlist prepared",
-                  description: "Practice with the app and pass the rank test on the first run."),
-            .init(icon: .init(named: "feature-3")!,
-                  title: "#teamarmee",
-                  description: "Add name tags of your comrades or cadre. Insignia automatically keeps every name tag you create in iCloud.")
+            .init(
+                icon: .init(named: Photos.tort)!,
+                title: "Знала, с кем общалась",
+                description: "Хола сеньорита. Рады приветствовать Вас в нашем маленьком мирке свифтеров. Сейчас тебе предстоит НЕЛЕГКАЯ задача пройти вербовку на великий праздник этого года."
+            ),
+            .init(
+                icon: .init(named: Photos.kos)!,
+                title: "Загадки?",
+                description: "Ты любишь сложности? Мы тебе их предоставили!\nМы собрали самые сложные загадки из потаенных уголков наших  “Капусток”"
+            ),
+            .init(
+                icon: .init(named: Photos.hear)!,
+                title: "Плюс уши",
+                description: "Не забудь включить звук и наслаждаться процессом"
+            )
         ])
     }
     
     static func setUpNotice() -> UIOnboardingTextViewConfiguration {
-        .init(icon: .init(named: "onboarding-notice-icon")!,
-              text: "Developed and designed for members of the Swiss Armed Forces.",
-              linkTitle: "Learn more...",
-              link: "https://www.lukmanascic.ch/portfolio/insignia",
-              tint: .init(named: "camou") ?? UIColor.init(red: 0.654, green: 0.618, blue: 0.494, alpha: 1.0))
+        // Иконка сердца
+        .init(
+            icon: .init(named: Photos.heart)!,
+            text: "С наилучшими пожеланиями, твои друзья"
+        )
     }
     
     static func setUpButton() -> UIOnboardingButtonConfiguration {
-        .init(title: "Continue",
-              backgroundColor: .init(named: "camou") ?? UIColor.init(red: 0.654, green: 0.618, blue: 0.494, alpha: 1.0))
+        .init(
+            title: "Начать путешествие",
+            titleColor: .darkBlueColor,
+            backgroundColor: .successTaskColor
+        )
     }
 }
 
 extension UIOnboardingViewConfiguration {
     static func setUp() -> UIOnboardingViewConfiguration {
-        .init(appIcon: UIOnboardingHelper.setUpIcon(),
-              firstTitleLine: UIOnboardingHelper.setUpFirstTitleLine(),
-              secondTitleLine: UIOnboardingHelper.setUpSecondTitleLine(),
-              features: UIOnboardingHelper.setUpFeatures(),
-              textViewConfiguration: UIOnboardingHelper.setUpNotice(),
-              buttonConfiguration: UIOnboardingHelper.setUpButton())
+        .init(
+            appIcon: UIOnboardingHelper.setUpIcon(),
+            firstTitleLine: UIOnboardingHelper.setUpFirstTitleLine(),
+            secondTitleLine: UIOnboardingHelper.setUpSecondTitleLine(),
+            features: UIOnboardingHelper.setUpFeatures(),
+            textViewConfiguration: UIOnboardingHelper.setUpNotice(),
+            buttonConfiguration: UIOnboardingHelper.setUpButton()
+        )
     }
 }

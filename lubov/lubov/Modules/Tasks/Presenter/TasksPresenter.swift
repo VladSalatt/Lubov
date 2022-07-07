@@ -44,6 +44,7 @@ final class TasksPresenter: NSObject, TasksViewOutput {
             return
         }
         userDefaults.isSecondOpen = true
+        view?.isFirstOpen = true
         
         self.tasks = makeTasks()
     }

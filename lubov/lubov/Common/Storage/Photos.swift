@@ -13,6 +13,7 @@ enum Photos {
     static let imageTwo: String = "drink"
     static let imageThree: String = "coding"
     static let lubaBlack: String = "luba_black"
+    static let lubaBlack120: String = "120"
     static let lubaBoroda: String = "luba_boroda"
     static let lubaHappy: String = "luba_is_happy"
     static let lubaMan: String = "luba_is_man"
@@ -22,4 +23,8 @@ enum Photos {
     static let lubaPlatok: String = "luba_v_platke"
     static let lubaGreen: String = "green_shapka"
     static let lubaNuhaet: String = "luba_nuhaet"
+    static let tort: String = "tort"
+    static let kos: String = "kos"
+    static let hear: String = "hear"
+    static let heart: String = "heart"
 }

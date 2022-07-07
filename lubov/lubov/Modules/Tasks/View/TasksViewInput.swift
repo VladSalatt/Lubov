@@ -7,5 +7,5 @@
 
 
 protocol TasksViewInput: AnyObject {
-    
+    var isFirstOpen: Bool { get set }
 }
